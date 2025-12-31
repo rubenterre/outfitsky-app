@@ -14,9 +14,7 @@
       name: "Aviso legal",
       url: "/legal",
     },
-    { name: "Términos y condiciones de uso", 
-      url: "/terminos", 
-    },
+    { name: "Términos y condiciones de uso", url: "/terminos" },
   ];
 </script>
 
@@ -24,20 +22,20 @@
   <div class="about__header">
     <img
       class="about__app-logo"
-      src="/assets/galicianSky_logo.svg"
-      alt="Logo de GalicianSky"
+      src="/assets/outfitSky_logo.svg"
+      alt="Logo de OutfitSky"
     />
   </div>
 
   <section class="about__section">
     <div class="about__content">
-      <h4 class="about__title">GalicianSky</h4>
+      <h4 class="about__title">OutfitSky</h4>
       <p class="about__version">Versión 1.0.0</p>
 
       <p class="about__text">
-        Esta aplicación está susentada pola base de datos de OpenWeatherMaps que
-        recomenda a roupa que podes vestir en función do tempo que fai na cidade
-        seleccionada.
+        Esta aplicación está basada en la base de datos de OpenWeatherMaps, que
+        recomienda la ropa que puedes vestir en función del tiempo que hace en
+        la ciudad seleccionada.
       </p>
 
       <div class="about__logo-wrapper">
@@ -45,11 +43,11 @@
       </div>
 
       <p class="about__text">
-        Desenvolto por <strong>Rubén Terré</strong>. Para máis información sobre
-        os meus traballos visita a miña web en
+        Desarrollado por <strong>Rubén Terré</strong>. Para más información sobre
+        mis trabajos visita mi web en
         <a class="about__a" href="https://www.rubenterre.com"
           >www.rubenterre.com</a
-        > ou a través dos seguintes canais:
+        > o a través de los siguientes canales:
       </p>
 
       <div class="about__socials">
@@ -84,14 +82,14 @@
 
       <p class="about__updates-title">
         <strong class="about__updates-title-text">
-          Actualizacións nas que estamos a traballar
+          Actualizaciones en las que estamos trabajando:
         </strong>
       </p>
 
       <ul class="about__updates-list">
-        <li class="about__updates-item">1- Melloras xerais da aplicación</li>
-        <li class="about__updates-item">2- Sistema de alertas meterolóxicas</li>
-        <li class="about__updates-item">3- Melloras no deseño</li>
+        <li class="about__updates-item">1- Mejoras generales de la aplicación</li>
+        <li class="about__updates-item">2- Sistema de alertas meterológicas</li>
+        <li class="about__updates-item">3- Mejoras en el diseño</li>
       </ul>
 
       <h4 class="about__title">MIT License</h4>

@@ -8,109 +8,110 @@
   <div class="legal-notice__container">
     <header class="legal-notice__header">
       <h1 class="legal-notice__title">Aviso legal</h1>
-      <p class="legal-notice__subtitle">GalicianSky</p>
+      <p class="legal-notice__subtitle">OutfitSky</p>
     </header>
 
     <section class="legal-notice__section legal-notice__section--first">
-      <h2 class="legal-notice__section-title">1. Identificación do titular</h2>
+      <h2 class="legal-notice__section-title">1. Identificación del titular</h2>
       <p class="legal-notice__text">
-        En cumprimento do disposto na Lei 34/2002, do 11 de xullo, de servizos da sociedade da información e de comercio electrónico (LSSI-CE), infórmase de que a aplicación
-        <strong class="legal-notice__text-strong">GalicianSky</strong> é titularidade de:
+        En cumplimiento de lo dispuesto en la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de que la aplicación
+        <strong class="legal-notice__text-strong">OutfitSky</strong> es titularidad de:
       </p>
       <p class="legal-notice__text">
         <strong class="legal-notice__text-strong">Titular:</strong> Rubén Terré<br />
         <strong class="legal-notice__text-strong">NIF/CIF:</strong> [Número de identificación fiscal]<br />
-        <strong class="legal-notice__text-strong">Domicilio:</strong> [Enderezo postal completo / domicilio profesional]<br />
+        <strong class="legal-notice__text-strong">Domicilio:</strong> [Dirección postal completa / domicilio profesional]<br />
         <strong class="legal-notice__text-strong">Correo electrónico de contacto:</strong> info@rubenterre.com<br />
         <strong class="legal-notice__text-strong">Sitio web:</strong> <a class="legal-notice__link" href="https://www.rubenterre.com">https://www.rubenterre.com</a>
       </p>
     </section>
 
     <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">2. Obxecto da aplicación</h2>
+      <h2 class="legal-notice__section-title">2. Objeto de la aplicación</h2>
       <p class="legal-notice__text">
-        A aplicación <strong class="legal-notice__text-strong">GalicianSky</strong> proporciona información meteorolóxica e suxestións de roupa en función das condicións do tempo na cidade seleccionada pola persoa usuaria.
+        La aplicación <strong class="legal-notice__text-strong">OutfitSky</strong> proporciona información meteorológica y sugerencias de ropa en función de las condiciones del tiempo en la ciudad seleccionada por la persona usuaria.
       </p>
       <p class="legal-notice__text">
-        O presente aviso legal regula o acceso e uso da devandita aplicación móbil, así como das funcionalidades e contidos asociados.
-      </p>
-    </section>
-
-    <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">3. Condicións de uso</h2>
-      <p class="legal-notice__text">
-        O uso de GalicianSky atribúe a condición de usuario ou usuaria e implica a aceptación plena e sen reservas de todas e cada unha das disposicións incluídas neste aviso legal na versión publicada no momento de acceso.
-      </p>
-      <p class="legal-notice__text">
-        A persoa usuaria comprométese a facer un uso adecuado da aplicación, a non empregala con fins ilícitos ou contrarios á boa fe e á orde pública, e a non realizar actuacións que poidan danar ou sobrecargar o seu funcionamento.
+        El presente aviso legal regula el acceso y uso de dicha aplicación móvil, así como de las funcionalidades y contenidos asociados.
       </p>
     </section>
 
     <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">4. Propiedade intelectual e industrial</h2>
+      <h2 class="legal-notice__section-title">3. Condiciones de uso</h2>
       <p class="legal-notice__text">
-        Todos os dereitos de propiedade intelectual e industrial sobre GalicianSky, o seu código fonte, deseño gráfico, interfaces, contidos, imaxes, iconas, logotipos e demais elementos que a compoñen pertencen ao titular ou a terceiros licenciantes, estando protexidos pola lexislación aplicable.
+        El uso de OutfitSky atribuye la condición de usuario o usuaria e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este aviso legal en la versión publicada en el momento de acceso.
       </p>
       <p class="legal-notice__text">
-        Non se cede ningún dereito de explotación sobre a aplicación máis alá do necesario para o seu uso persoal, limitado e non exclusivo. Queda expresamente prohibida a reprodución, distribución, comunicación pública, transformación ou calquera outra forma de explotación non autorizada expresamente polo titular.
-      </p>
-    </section>
-
-    <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">5. Responsabilidade</h2>
-      <p class="legal-notice__text">
-        O titular non garante a dispoñibilidade continua e permanente da aplicación, aínda que realizará os esforzos razoables para garantir a súa estabilidade e funcionalidade.
-      </p>
-      <p class="legal-notice__text">
-        A información meteorolóxica móstrase a partir de datos proporcionados por servizos de terceiros, polo que o titular non se responsabiliza de posibles erros, inexactitudes ou falta de actualización destes datos, nin das decisións de vestimenta tomadas pola persoa usuaria a partir das recomendacións ofrecidas pola app.
-      </p>
-      <p class="legal-notice__text">
-        O titular tampouco será responsable de danos e prexuízos que poidan derivarse de fallos técnicos, interrupcións do servizo, virus ou outros elementos lesivos alleos ao seu control razoable.
+        La persona usuaria se compromete a hacer un uso adecuado de la aplicación, a no emplearla con fines ilícitos o contrarios a la buena fe y al orden público, y a no realizar actuaciones que puedan dañar o sobrecargar su funcionamiento.
       </p>
     </section>
 
     <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">6. Protección de datos persoais</h2>
+      <h2 class="legal-notice__section-title">4. Propiedad intelectual e industrial</h2>
       <p class="legal-notice__text">
-        O tratamento dos datos persoais recollidos a través de GalicianSky rexerase pola
-        <strong class="legal-notice__text-strong">Política de privacidade e protección de datos</strong>, accesible na propia aplicación e/ou no sitio web indicado, onde se informa detalladamente sobre finalidades, bases xurídicas, destinatarios, dereitos das persoas usuarias e resto de aspectos esixidos polo RXPD e a LOPDGDD.
+        Todos los derechos de propiedad intelectual e industrial sobre OutfitSky, su código fuente, diseño gráfico, interfaces, contenidos, imágenes, iconos, logotipos y demás elementos que la componen pertenecen al titular o a terceros licenciantes, estando protegidos por la legislación aplicable.
       </p>
       <p class="legal-notice__text">
-        Recoméndase revisar periodicamente dita política para coñecer posibles actualizacións ou modificacións.
-      </p>
-    </section>
-
-    <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">7. Ligazóns a terceiros</h2>
-      <p class="legal-notice__text">
-        GalicianSky pode incluír ligazóns a sitios web ou servizos de terceiros (por exemplo, páxinas do desenvolvedor ou perfís en redes sociais). Estes sitios teñen as súas propias condicións de uso e políticas de privacidade, alleas ao control do titular.
-      </p>
-      <p class="legal-notice__text">
-        O titular non asume responsabilidade ningunha respecto de contidos, prácticas ou condicións destes servizos de terceiros, recomendando revisar a documentación legal correspondente antes do seu uso.
+        No se cede ningún derecho de explotación sobre la aplicación más allá de lo necesario para su uso personal, limitado y no exclusivo. Queda expresamente prohibida la reproducción, distribución, comunicación pública, transformación o cualquier otra forma de explotación no autorizada expresamente por el titular.
       </p>
     </section>
 
     <section class="legal-notice__section">
-      <h2 class="legal-notice__section-title">8. Modificacións do aviso legal</h2>
+      <h2 class="legal-notice__section-title">5. Responsabilidad</h2>
       <p class="legal-notice__text">
-        O titular reserva para si o dereito a modificar, actualizar ou eliminar, en calquera momento e sen previo aviso, o presente aviso legal, así como calquera outro texto legal ou condición de uso aplicable á aplicación.
+        El titular no garantiza la disponibilidad continua y permanente de la aplicación, aunque realizará los esfuerzos razonables para garantizar su estabilidad y funcionalidad.
       </p>
       <p class="legal-notice__text">
-        As modificacións serán efectivas desde o momento en que se publiquen na app ou no sitio web correspondente. Recoméndase á persoa usuaria revisar periodicamente este aviso.
+        La información meteorológica se muestra a partir de datos proporcionados por servicios de terceros, por lo que el titular no se responsabiliza de posibles errores, inexactitudes o falta de actualización de dichos datos, ni de las decisiones de vestimenta tomadas por la persona usuaria a partir de las recomendaciones ofrecidas por la app.
+      </p>
+      <p class="legal-notice__text">
+        El titular tampoco será responsable de daños y perjuicios que puedan derivarse de fallos técnicos, interrupciones del servicio, virus u otros elementos lesivos ajenos a su control razonable.
+      </p>
+    </section>
+
+    <section class="legal-notice__section">
+      <h2 class="legal-notice__section-title">6. Protección de datos personales</h2>
+      <p class="legal-notice__text">
+        El tratamiento de los datos personales recogidos a través de OutfitSky se regirá por la
+        <strong class="legal-notice__text-strong">Política de privacidad y protección de datos</strong>, accesible en la propia aplicación y/o en el sitio web indicado, donde se informa detalladamente sobre finalidades, bases jurídicas, destinatarios, derechos de las personas usuarias y resto de aspectos exigidos por el RGPD y la LOPDGDD.
+      </p>
+      <p class="legal-notice__text">
+        Se recomienda revisar periódicamente dicha política para conocer posibles actualizaciones o modificaciones.
+      </p>
+    </section>
+
+    <section class="legal-notice__section">
+      <h2 class="legal-notice__section-title">7. Enlaces a terceros</h2>
+      <p class="legal-notice__text">
+        OutfitSky puede incluir enlaces a sitios web o servicios de terceros (por ejemplo, páginas del desarrollador o perfiles en redes sociales). Estos sitios tienen sus propias condiciones de uso y políticas de privacidad, ajenas al control del titular.
+      </p>
+      <p class="legal-notice__text">
+        El titular no asume ninguna responsabilidad respecto a contenidos, prácticas o condiciones de estos servicios de terceros, recomendando revisar la documentación legal correspondiente antes de su uso.
+      </p>
+    </section>
+
+    <section class="legal-notice__section">
+      <h2 class="legal-notice__section-title">8. Modificaciones del aviso legal</h2>
+      <p class="legal-notice__text">
+        El titular se reserva el derecho a modificar, actualizar o eliminar, en cualquier momento y sin previo aviso, el presente aviso legal, así como cualquier otro texto legal o condición de uso aplicable a la aplicación.
+      </p>
+      <p class="legal-notice__text">
+        Las modificaciones serán efectivas desde el momento en que se publiquen en la app o en el sitio web correspondiente. Se recomienda a la persona usuaria revisar periódicamente este aviso.
       </p>
     </section>
 
     <section class="legal-notice__section legal-notice__section--last">
-      <h2 class="legal-notice__section-title">9. Lei aplicable e xurisdición</h2>
+      <h2 class="legal-notice__section-title">9. Ley aplicable y jurisdicción</h2>
       <p class="legal-notice__text">
-        O presente aviso legal rexerase e interpretarase de conformidade coa lexislación española.
+        El presente aviso legal se regirá e interpretará de conformidad con la legislación española.
       </p>
       <p class="legal-notice__text">
-        Para calquera controversia que puider derivarse do acceso ou uso de GalicianSky, as partes sométense expresamente aos Xulgados e Tribunais da cidade de Santiago de Compostela, salvo que a normativa imperativa en materia de consumidores e usuarios estableza outro foro distinto.
+        Para cualquier controversia que pudiera derivarse del acceso o uso de OutfitSky, las partes se someten expresamente a los Juzgados y Tribunales de la ciudad de Santiago de Compostela, salvo que la normativa imperativa en materia de consumidores y usuarios establezca otro fuero distinto.
       </p>
     </section>
   </div>
 </section>
+
 
 
 <Footer></Footer>

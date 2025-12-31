@@ -2,188 +2,180 @@
   import Footer from "$lib/components/Footer.svelte";
 
 </script>
-<section class="legal">
-  <div class="legal__container">
-    <header class="legal__header">
-      <h1 class="legal__title">Política de privacidade e protección de datos (GDPR)</h1>
-      <p class="legal__subtitle">GalicianSky</p>
-    </header>
-
-    <section class="legal__section legal__section--first">
-      <h2 class="legal__section-title">1. Responsable do tratamento</h2>
-      <p class="legal__text">
-        <strong class="legal__text-strong">Responsable:</strong> Rubén Terré<br />
-        <strong class="legal__text-strong">NIF/CIF:</strong>  <br />
-        <strong class="legal__text-strong">Enderezo:</strong>Santiago de Compostela<br />
-        <strong class="legal__text-strong">Correo electrónico de contacto:</strong> info@rubenterre.com
-      </p>
-      <p class="legal__text">
-        O responsable garante o cumprimento da normativa vixente en materia de protección de datos persoais e, en particular, do Regulamento (UE) 2016/679 (RXPD/GDPR) e da Lei orgánica 3/2018 (LOPDGDD).
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">2. Datos que se recollen e finalidade</h2>
-      <p class="legal__text">
-        Na aplicación <strong class="legal__text-strong">GalicianSky</strong> poderanse tratar os seguintes tipos de datos:
-      </p>
-      <ul class="legal__list">
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Datos técnicos da app:</strong> versión da aplicación, sistema operativo, identificadores de dispositivo ou datos similares usados para garantir o correcto funcionamento e mellora do servizo.
-        </li>
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Datos de localización aproximada (se corresponde):</strong> utilizados unicamente para consultar o tempo na zona do usuario e recomendar roupa en función das condicións meteorolóxicas.
-        </li>
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Datos de uso:</strong> estatísticas de uso da aplicación (pantallas máis consultadas, erros, etc.) con fins de análise e mellora, sempre de forma agregada ou pseudonimizada cando sexa posible.
-        </li>
-      </ul>
-      <p class="legal__text">
-        <strong class="legal__text-strong">Finalidades principais:</strong>
-      </p>
-      <ol class="legal__list legal__list--ordered">
-        <li class="legal__list-item">Prestar o servizo de información meteorolóxica e recomendación de roupa segundo o tempo.</li>
-        <li class="legal__list-item">Mellorar o funcionamento e a experiencia de uso da aplicación.</li>
-        <li class="legal__list-item">Cumprir coas obrigas legais aplicables ao responsable.</li>
-      </ol>
-      <p class="legal__text">
-        Non se tomarán decisións automatizadas con efectos xurídicos significativos para o usuario nin se realizarán perfís avanzados máis alá da adaptación do contido ás condicións meteorolóxicas.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">3. Base lexítima do tratamento</h2>
-      <p class="legal__text">
-        As bases xurídicas que permiten tratar os datos son:
-      </p>
-      <ul class="legal__list">
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Execución do servizo/contrato:</strong> para poder ofrecer a funcionalidade principal da app (consultar o tempo e mostrar recomendacións de roupa).
-        </li>
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Interese lexítimo do responsable:</strong> para realizar analítica básica de uso e mellora do servizo, sempre respectando os dereitos e liberdades das persoas usuarias.
-        </li>
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Consentimento do usuario:</strong> cando sexa necesario recoller datos que non resulten estritamente imprescindibles para o funcionamento básico ou cando así o exixa a normativa. O consentimento poderá revogarse en calquera momento a través dos axustes da app ou dos axustes de permisos do dispositivo.
-        </li>
-      </ul>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">4. Destinatarios e transferencias de datos</h2>
-      <p class="legal__text">
-        Os datos poderán ser comunicados a:
-      </p>
-      <ul class="legal__list">
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Provedores de servizos tecnolóxicos</strong> necesarios para o funcionamento da app (por exemplo, servizos de hospedaxe ou analítica).
-        </li>
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Servizo de predición meteorolóxica de terceiros</strong> (por exemplo, APIs de previsión do tempo), ao cal se lle poderá enviar información como a localización aproximada ou a cidade seleccionada para obter os datos meteorolóxicos.
-        </li>
-      </ul>
-      <p class="legal__text">
-        En ningún caso se venderán datos persoais a terceiros.
-      </p>
-      <p class="legal__text">
-        Se se realizasen transferencias internacionais de datos fóra do Espazo Económico Europeo, garantirase un nivel adecuado de protección conforme ao RXPD, mediante decisións de adecuación da Comisión Europea ou cláusulas contractuais tipo, segundo corresponda.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">5. Prazo de conservación dos datos</h2>
-      <p class="legal__text">
-        Os datos conservaranse durante os seguintes prazos:
-      </p>
-      <ul class="legal__list">
-        <li class="legal__list-item">
-          <strong class="legal__text-strong">Datos técnicos e de uso:</strong> durante o tempo necesario para prestar o servizo e analizar o funcionamento da app, e como máximo o prazo que sexa razoable para cumprir cos fins indicados.
-        </li>
-      </ul>
-      <p class="legal__text">
-        Unha vez rematados os prazos, os datos serán bloqueados e posteriormente eliminados ou anonimizados, agás que exista unha obriga legal de conservación máis longa.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">6. Dereitos das persoas usuarias</h2>
-      <p class="legal__text">
-        Como usuario ou usuaria tes dereito a:
-      </p>
-      <ul class="legal__list">
-        <li class="legal__list-item"><strong class="legal__text-strong">Acceso:</strong> saber que datos teus se están tratando.</li>
-        <li class="legal__list-item"><strong class="legal__text-strong">Rectificación:</strong> solicitar a rectificación de datos inexactos ou incompletos.</li>
-        <li class="legal__list-item"><strong class="legal__text-strong">Supresión (dereito ao esquecemento):</strong> pedir que se eliminen os teus datos cando xa non sexan necesarios ou cando retireches o teu consentimento.</li>
-        <li class="legal__list-item"><strong class="legal__text-strong">Limitación do tratamento:</strong> solicitar que se limiten certos tratamentos dos teus datos.</li>
-        <li class="legal__list-item"><strong class="legal__text-strong">Oposición:</strong> opoñerte ao tratamento baseado no interese lexítimo en determinadas circunstancias.</li>
-        <li class="legal__list-item"><strong class="legal__text-strong">Portabilidade:</strong> recibir os datos nun formato estruturado e, se é tecnicamente posible, transmitilos a outro responsable.</li>
-      </ul>
-      <p class="legal__text">
-        Para exercitar estes dereitos podes enviar unha solicitude escrita xunto cun documento acreditativo da túa identidade a:
-      </p>
-      <p class="legal__text">
-        Correo electrónico: info@rubenterre.com<br />
-        Ou por correo postal a: Santiago de Compostela
-      </p>
-      <p class="legal__text">
-        Así mesmo, tes dereito a presentar unha reclamación perante a
-        <a class="legal__link" href="https://www.aepd.es" target="_blank" rel="noreferrer">Agencia Española de Protección de Datos (AEPD)</a>
-        se consideras que non se atenderon adecuadamente os teus dereitos.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">7. Seguridade dos datos</h2>
-      <p class="legal__text">
-        O responsable comprométese a aplicar as medidas técnicas e organizativas adecuadas para garantir un nivel de seguridade axeitado ao risco, co fin de evitar a perda, mal uso, acceso non autorizado, divulgación ou modificación dos datos persoais.
-      </p>
-      <p class="legal__text">
-        Non obstante, debes ser consciente de que ningunha medida de seguridade é absolutamente infalible, e o uso de Internet e das aplicacións móbiles implica certos riscos.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">8. Menores de idade</h2>
-      <p class="legal__text">
-        GalicianSky non está dirixida especificamente a menores de 14 anos.
-      </p>
-      <p class="legal__text">
-        Se, a pesar diso, se detecta o tratamento de datos de menores sen o consentimento válido da persoa que ostente a patria potestade ou tutela, procederase á súa supresión inmediata tan pronto como o responsable teña coñecemento dese feito.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">9. Ligazóns a sitios de terceiros</h2>
-      <p class="legal__text">
-        A aplicación pode incluír ligazóns a sitios web ou servizos de terceiros (por exemplo, páxina persoal do desenvolvedor ou perfís en redes sociais).
-      </p>
-      <p class="legal__text">
-        O responsable non se fai cargo das políticas de privacidade nin dos contidos destes sitios. Recoméndase que revises a política de privacidade de cada servizo de terceiros que visites.
-      </p>
-    </section>
-
-    <section class="legal__section">
-      <h2 class="legal__section-title">10. Modificacións da política de privacidade</h2>
-      <p class="legal__text">
-        O responsable poderá actualizar esta política de privacidade para adaptala a cambios legais, técnicos ou de funcionamento da aplicación.
-      </p>
-      <p class="legal__text">
-        Cando se produzan cambios relevantes, informarase na propia app ou por outros medios axeitados. A versión vixente será a que estea publicada na app ou na web asociada en cada momento.
-      </p>
-    </section>
-
-    <section class="legal__section legal__section--last">
-      <h2 class="legal__section-title">11. Contacto</h2>
-      <p class="legal__text">
-        Para calquera dúbida ou consulta relacionada con esta política de privacidade ou co tratamento dos teus datos persoais, podes contactar en:
-      </p>
-      <p class="legal__text">
-        <strong class="legal__text-strong">Correo electrónico:</strong> info@rubenterre.com<br />
-        <strong class="legal__text-strong">Enderezo postal:</strong> Santiago de Compostela
-      </p>
-    </section>
-  </div>
+<section class="legal__section legal__section--first">
+  <h2 class="legal__section-title">1. Responsable del tratamiento</h2>
+  <p class="legal__text">
+    <strong class="legal__text-strong">Responsable:</strong> Rubén Terré<br />
+    <strong class="legal__text-strong">NIF/CIF:</strong>  <br />
+    <strong class="legal__text-strong">Dirección:</strong> Santiago de Compostela<br />
+    <strong class="legal__text-strong">Correo electrónico de contacto:</strong> info@rubenterre.com
+  </p>
+  <p class="legal__text">
+    El responsable garantiza el cumplimiento de la normativa vigente en materia de protección de datos personales y, en particular, del Reglamento (UE) 2016/679 (RGPD/GDPR) y de la Ley Orgánica 3/2018 (LOPDGDD).
+  </p>
 </section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">2. Datos que se recogen y finalidad</h2>
+  <p class="legal__text">
+    En la aplicación <strong class="legal__text-strong">OutfitSky</strong> se podrán tratar los siguientes tipos de datos:
+  </p>
+  <ul class="legal__list">
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Datos técnicos de la app:</strong> versión de la aplicación, sistema operativo, identificadores de dispositivo o datos similares usados para garantizar el correcto funcionamiento y mejora del servicio.
+    </li>
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Datos de localización aproximada (si corresponde):</strong> utilizados únicamente para consultar el tiempo en la zona del usuario y recomendar ropa en función de las condiciones meteorológicas.
+    </li>
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Datos de uso:</strong> estadísticas de uso de la aplicación (pantallas más consultadas, errores, etc.) con fines de análisis y mejora, siempre de forma agregada o seudonimizada cuando sea posible.
+    </li>
+  </ul>
+  <p class="legal__text">
+    <strong class="legal__text-strong">Finalidades principales:</strong>
+  </p>
+  <ol class="legal__list legal__list--ordered">
+    <li class="legal__list-item">Prestar el servicio de información meteorológica y recomendación de ropa según el tiempo.</li>
+    <li class="legal__list-item">Mejorar el funcionamiento y la experiencia de uso de la aplicación.</li>
+    <li class="legal__list-item">Cumplir con las obligaciones legales aplicables al responsable.</li>
+  </ol>
+  <p class="legal__text">
+    No se tomarán decisiones automatizadas con efectos jurídicos significativos para el usuario ni se realizarán perfiles avanzados más allá de la adaptación del contenido a las condiciones meteorológicas.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">3. Base legítima del tratamiento</h2>
+  <p class="legal__text">
+    Las bases jurídicas que permiten tratar los datos son:
+  </p>
+  <ul class="legal__list">
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Ejecución del servicio/contrato:</strong> para poder ofrecer la funcionalidad principal de la app (consultar el tiempo y mostrar recomendaciones de ropa).
+    </li>
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Interés legítimo del responsable:</strong> para realizar analítica básica de uso y mejora del servicio, siempre respetando los derechos y libertades de las personas usuarias.
+    </li>
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Consentimiento del usuario:</strong> cuando sea necesario recoger datos que no resulten estrictamente imprescindibles para el funcionamiento básico o cuando así lo exija la normativa. El consentimiento podrá revocarse en cualquier momento a través de los ajustes de la app o de los ajustes de permisos del dispositivo.
+    </li>
+  </ul>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">4. Destinatarios y transferencias de datos</h2>
+  <p class="legal__text">
+    Los datos podrán ser comunicados a:
+  </p>
+  <ul class="legal__list">
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Proveedores de servicios tecnológicos</strong> necesarios para el funcionamiento de la app (por ejemplo, servicios de hospedaje o analítica).
+    </li>
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Servicio de predicción meteorológica de terceros</strong> (por ejemplo, APIs de previsión del tiempo), al cual se le podrá enviar información como la localización aproximada o la ciudad seleccionada para obtener los datos meteorológicos.
+    </li>
+  </ul>
+  <p class="legal__text">
+    En ningún caso se venderán datos personales a terceros.
+  </p>
+  <p class="legal__text">
+    Si se realizasen transferencias internacionales de datos fuera del Espacio Económico Europeo, se garantizará un nivel adecuado de protección conforme al RGPD, mediante decisiones de adecuación de la Comisión Europea o cláusulas contractuales tipo, según corresponda.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">5. Plazo de conservación de los datos</h2>
+  <p class="legal__text">
+    Los datos se conservarán durante los siguientes plazos:
+  </p>
+  <ul class="legal__list">
+    <li class="legal__list-item">
+      <strong class="legal__text-strong">Datos técnicos y de uso:</strong> durante el tiempo necesario para prestar el servicio y analizar el funcionamiento de la app, y como máximo el plazo que sea razonable para cumplir con los fines indicados.
+    </li>
+  </ul>
+  <p class="legal__text">
+    Una vez finalizados los plazos, los datos serán bloqueados y posteriormente eliminados o anonimizados, salvo que exista una obligación legal de conservación más larga.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">6. Derechos de las personas usuarias</h2>
+  <p class="legal__text">
+    Como usuario o usuaria tienes derecho a:
+  </p>
+  <ul class="legal__list">
+    <li class="legal__list-item"><strong class="legal__text-strong">Acceso:</strong> saber qué datos tuyos se están tratando.</li>
+    <li class="legal__list-item"><strong class="legal__text-strong">Rectificación:</strong> solicitar la rectificación de datos inexactos o incompletos.</li>
+    <li class="legal__list-item"><strong class="legal__text-strong">Supresión (derecho al olvido):</strong> pedir que se eliminen tus datos cuando ya no sean necesarios o cuando hayas retirado tu consentimiento.</li>
+    <li class="legal__list-item"><strong class="legal__text-strong">Limitación del tratamiento:</strong> solicitar que se limiten ciertos tratamientos de tus datos.</li>
+    <li class="legal__list-item"><strong class="legal__text-strong">Oposición:</strong> oponerte al tratamiento basado en el interés legítimo en determinadas circunstancias.</li>
+    <li class="legal__list-item"><strong class="legal__text-strong">Portabilidad:</strong> recibir los datos en un formato estructurado y, si es técnicamente posible, transmitirlos a otro responsable.</li>
+  </ul>
+  <p class="legal__text">
+    Para ejercer estos derechos puedes enviar una solicitud escrita junto con un documento acreditativo de tu identidad a:
+  </p>
+  <p class="legal__text">
+    Correo electrónico: info@rubenterre.com<br />
+    O por correo postal a: Santiago de Compostela
+  </p>
+  <p class="legal__text">
+    Asimismo, tienes derecho a presentar una reclamación ante la
+    <a class="legal__link" href="https://www.aepd.es" target="_blank" rel="noreferrer">Agencia Española de Protección de Datos (AEPD)</a>
+    si consideras que no se han atendido adecuadamente tus derechos.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">7. Seguridad de los datos</h2>
+  <p class="legal__text">
+    El responsable se compromete a aplicar las medidas técnicas y organizativas adecuadas para garantizar un nivel de seguridad apropiado al riesgo, con el fin de evitar la pérdida, mal uso, acceso no autorizado, divulgación o modificación de los datos personales.
+  </p>
+  <p class="legal__text">
+    No obstante, debes ser consciente de que ninguna medida de seguridad es absolutamente infalible, y el uso de Internet y de las aplicaciones móviles implica ciertos riesgos.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">8. Menores de edad</h2>
+  <p class="legal__text">
+    OutfitSky no está dirigida específicamente a menores de 14 años.
+  </p>
+  <p class="legal__text">
+    Si, a pesar de ello, se detecta el tratamiento de datos de menores sin el consentimiento válido de la persona que ostente la patria potestad o tutela, se procederá a su supresión inmediata tan pronto como el responsable tenga conocimiento de ese hecho.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">9. Enlaces a sitios de terceros</h2>
+  <p class="legal__text">
+    La aplicación puede incluir enlaces a sitios web o servicios de terceros (por ejemplo, página personal del desarrollador o perfiles en redes sociales).
+  </p>
+  <p class="legal__text">
+    El responsable no se hace cargo de las políticas de privacidad ni de los contenidos de estos sitios. Se recomienda que revises la política de privacidad de cada servicio de terceros que visites.
+  </p>
+</section>
+
+<section class="legal__section">
+  <h2 class="legal__section-title">10. Modificaciones de la política de privacidad</h2>
+  <p class="legal__text">
+    El responsable podrá actualizar esta política de privacidad para adaptarla a cambios legales, técnicos o de funcionamiento de la aplicación.
+  </p>
+  <p class="legal__text">
+    Cuando se produzcan cambios relevantes, se informará en la propia app o por otros medios adecuados. La versión vigente será la que esté publicada en la app o en la web asociada en cada momento.
+  </p>
+</section>
+
+<section class="legal__section legal__section--last">
+  <h2 class="legal__section-title">11. Contacto</h2>
+  <p class="legal__text">
+    Para cualquier duda o consulta relacionada con esta política de privacidad o con el tratamiento de tus datos personales, puedes contactar en:
+  </p>
+  <p class="legal__text">
+    <strong class="legal__text-strong">Correo electrónico:</strong> info@rubenterre.com<br />
+    <strong class="legal__text-strong">Dirección postal:</strong> Santiago de Compostela
+  </p>
+</section>
+
 
 <Footer></Footer>
 

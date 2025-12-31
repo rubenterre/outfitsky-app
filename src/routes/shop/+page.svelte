@@ -171,7 +171,7 @@
       type="search"
       name="buscar"
       id="buscar"
-      placeholder="Buscar roupa e complementos"
+      placeholder="Buscar ropa y complementos"
     />
     <button class="shop__button" type="submit">
       <img
@@ -187,11 +187,11 @@
   </div>
 
   <div class="shop__hero">
-    <h2 class="shop__h2">Suxerencia de outfit para hoxe</h2>
+    <h2 class="shop__h2">Sugerencia de outfit para hoy</h2>
 
     <div class="shop__select-wrapper">
       <label class="shop__label">
-        Escolle unha cidade:
+        Escoge una ciudad:
         <select class="shop__select" on:change={onChangeCity}>
           {#each cities as city}
             <option
@@ -206,17 +206,17 @@
     </div>
 
     <p class="shop__p">
-      Atuendo recomendado segundo o tempo actual en
+      Atuendo recomendado según el tiempo actual en
       <span class="shop__span">{selectedCity.name}</span>
     </p>
 
     <div class="shop__hero-outfit">
       {#if loading}
-        <p>Cargando tempo e suxerencias...</p>
+        <p>Cargando tiempo y sugerencias...</p>
       {:else if errorMsg}
         <p>{errorMsg}</p>
       {:else if !weatherToday || recommended.length === 0}
-        <p>Non hai suxerencias dispoñibles co catálogo actual.</p>
+        <p>No hay sugerencias disponibles con el catálogo actual.</p>
       {:else}
         {#each recommended as product}
           <div class="shop__card shop__card--hero">

@@ -48,7 +48,7 @@
 
   //Datos hoxe
   async function obtenerDatos(lat, lon) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=gl`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
 
     try {
       const response = await fetch(url);
@@ -171,8 +171,8 @@
         <div class="row">
           <div class="col s12">
             <header class="weather-card__header">
-              <p class="weather-card__city">Cidade descoñecida</p>
-              <p class="weather-card__date">Data descoñecida</p>
+              <p class="weather-card__city">Ciudad desconocida</p>
+              <p class="weather-card__date">Fecha desconocida</p>
             </header>
           </div>
         </div>
@@ -191,7 +191,7 @@
                 0°
               </p>
               <p class="weather-card__description">
-                Descripción do tempo descoñecido
+                Descripción del tiempo desconocida
               </p>
               <p class="weather-card__range">
                 <span class="weather-card__range-max"
@@ -227,14 +227,14 @@
       <p class="weather-card__forecast-title">Pronóstico por horas</p>
     </header>
 
-      <p class="weather-card__p--desconnect">Sen detalles</p>
+      <p class="weather-card__p--desconnect">Sin detalles</p>
   </section>
   <section class="weather-card__forecast">
     <header class="weather-card__forecast-header">
       <p class="weather-card__forecast-title">Pronóstico por días</p>
     </header>
 
-      <p class="weather-card__p--desconnect">Sen detalles</p>
+      <p class="weather-card__p--desconnect">Sin detalles</p>
   </section>
 
   <section class="weather-card__details">
@@ -243,7 +243,7 @@
     </header>
 
     <div class="weather-card__details--container">
-      <p class="weather-card__p--desconnect">Sen detalles</p>
+      <p class="weather-card__p--desconnect">Sin detalles</p>
     </div>
   </section>
   <Footer></Footer>

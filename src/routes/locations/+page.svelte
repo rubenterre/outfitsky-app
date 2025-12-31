@@ -64,13 +64,13 @@
 <section class="locations">
   <div class="locations__hero">
     <img
-      src="/assets/galicianSky_logo.svg"
-      alt="Logo de GalicianSky"
+      src="/assets/outfitSky_logo.svg"
+      alt="Logo de OutfitSky"
       class="locations__logo"
     />
     <div class="locations__title">
-      <h2 class="locations__h2">GalicianSky</h2>
-      <p class="locations__p">O tempo de Galicia</p>
+      <h2 class="locations__h2">OutfitSky</h2>
+      <p class="locations__p">La app del tiempo que te viste</p>
     </div>
   </div>
 

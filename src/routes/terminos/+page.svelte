@@ -6,17 +6,17 @@
   <div class="terms__container">
     <header class="terms__header">
       <h1 class="terms__title">Termos e condicións de uso</h1>
-      <p class="terms__subtitle">GalicianSky</p>
+      <p class="terms__subtitle">OutfitSky</p>
     </header>
 
     <section class="terms__section terms__section--first">
       <h2 class="terms__section-title">1. Obxecto</h2>
       <p class="terms__text">
         Os presentes termos e condicións regulan o acceso e uso da aplicación móbil
-        <strong class="terms__text-strong">GalicianSky</strong> (en diante, “a aplicación”), posta á disposición das persoas usuarias polo seu titular.
+        <strong class="terms__text-strong">OutfitSky</strong> (en diante, “a aplicación”), posta á disposición das persoas usuarias polo seu titular.
       </p>
       <p class="terms__text">
-        Ao instalar ou utilizar a aplicación, a persoa usuaria acepta expresamente estes termos e condicións. Se non está de acordo con eles, deberá absterse de utilizar GalicianSky.
+        Ao instalar ou utilizar a aplicación, a persoa usuaria acepta expresamente estes termos e condicións. Se non está de acordo con eles, deberá absterse de utilizar OutfitSky.
       </p>
     </section>
 
@@ -48,14 +48,14 @@
     <section class="terms__section">
       <h2 class="terms__section-title">4. Requisitos de idade</h2>
       <p class="terms__text">
-        A aplicación non está dirixida especificamente a menores de 14 anos. Ao utilizar GalicianSky, a persoa usuaria declara ter polo menos 14 anos ou contar co consentimento da persoa que ostente a patria potestade ou tutela.
+        A aplicación non está dirixida especificamente a menores de 14 anos. Ao utilizar OutfitSky, a persoa usuaria declara ter polo menos 14 anos ou contar co consentimento da persoa que ostente a patria potestade ou tutela.
       </p>
     </section>
 
     <section class="terms__section">
       <h2 class="terms__section-title">5. Uso aceptable da aplicación</h2>
       <p class="terms__text">
-        A persoa usuaria comprométese a empregar GalicianSky de forma diligente, correcta e lícita, absténdose de:
+        A persoa usuaria comprométese a empregar OutfitSky de forma diligente, correcta e lícita, absténdose de:
       </p>
       <ul class="terms__list">
         <li class="terms__list-item">
@@ -76,7 +76,7 @@
     <section class="terms__section">
       <h2 class="terms__section-title">6. Propiedade intelectual e industrial</h2>
       <p class="terms__text">
-        GalicianSky, o seu código fonte, deseño, elementos gráficos, logotipos, iconas, textos, imaxes e demais contidos están protexidos por dereitos de propiedade intelectual e industrial titularidade do propietario da app ou de terceiros licenciantes.
+        OutfitSky, o seu código fonte, deseño, elementos gráficos, logotipos, iconas, textos, imaxes e demais contidos están protexidos por dereitos de propiedade intelectual e industrial titularidade do propietario da app ou de terceiros licenciantes.
       </p>
       <p class="terms__text">
         A persoa usuaria recibe unha licenza limitada, non exclusiva, intransferible e revogable para utilizar a aplicación a título persoal e non comercial. Calquera reprodución, distribución, comunicación pública, transformación ou explotación non autorizada queda expresamente prohibida.
@@ -86,7 +86,7 @@
     <section class="terms__section">
       <h2 class="terms__section-title">7. Información meteorolóxica e recomendacións</h2>
       <p class="terms__text">
-        A información sobre o tempo que se amosa en GalicianSky provén de servizos de terceiros (APIs meteorolóxicas). As recomendacións de roupa xeradas pola app teñen carácter meramente orientativo.
+        A información sobre o tempo que se amosa en OutfitSky provén de servizos de terceiros (APIs meteorolóxicas). As recomendacións de roupa xeradas pola app teñen carácter meramente orientativo.
       </p>
       <p class="terms__text">
         O titular non garante a exactitude, vixencia ou exhaustividade dos datos meteorolóxicos nin se fai responsable das decisións ou actuacións que a persoa usuaria adopte baseándose nas recomendacións proporcionadas pola aplicación.
@@ -96,7 +96,7 @@
     <section class="terms__section">
       <h2 class="terms__section-title">8. Custos e compras dentro da aplicación</h2>
       <p class="terms__text">
-        [Indicar se GalicianSky é gratuíta, se contén compras integradas ou enlaces a tendas externas. Por exemplo: “Actualmente, GalicianSky ofrécese de forma gratuíta e non inclúe compras integradas na aplicación.”]
+        [Indicar se OutfitSky é gratuíta, se contén compras integradas ou enlaces a tendas externas. Por exemplo: “Actualmente, OutfitSky ofrécese de forma gratuíta e non inclúe compras integradas na aplicación.”]
       </p>
       <p class="terms__text">
         No caso de incorporar futuras funcionalidades de pagamento, informarase de forma clara e previa á persoa usuaria, indicándose os prezos, condicións de pagamento e política de reembolsos aplicables.
@@ -106,7 +106,7 @@
     <section class="terms__section">
       <h2 class="terms__section-title">9. Privacidade e protección de datos</h2>
       <p class="terms__text">
-        O tratamento dos datos persoais recollidos a través de GalicianSky rexerase pola
+        O tratamento dos datos persoais recollidos a través de OutfitSky rexerase pola
         <strong class="terms__text-strong">Política de privacidade e protección de datos</strong> da aplicación, que forma parte integrante destes termos.
       </p>
       <p class="terms__text">
@@ -120,7 +120,7 @@
         O titular non garante a falta de erros na aplicación nin a súa dispoñibilidade continua, aínda que realizará esforzos razoables para corrixir aqueles problemas técnicos dos que teña coñecemento.
       </p>
       <p class="terms__text">
-        En ningunha circunstancia será responsable de danos directos, indirectos, incidentais, especiais ou consecuentes derivados do uso ou imposibilidade de uso de GalicianSky, agás na medida en que así o exixa imperativamente a lexislación aplicable.
+        En ningunha circunstancia será responsable de danos directos, indirectos, incidentais, especiais ou consecuentes derivados do uso ou imposibilidade de uso de OutfitSky, agás na medida en que así o exixa imperativamente a lexislación aplicable.
       </p>
     </section>
 
@@ -130,7 +130,7 @@
         O titular reserva para si o dereito a modificar estes termos e condicións en calquera momento. As modificacións entrarán en vigor desde a súa publicación na aplicación ou na canle oficial correspondente.
       </p>
       <p class="terms__text">
-        O uso continuado de GalicianSky tras a publicación das modificacións implicará a aceptación das novas condicións por parte da persoa usuaria.
+        O uso continuado de OutfitSky tras a publicación das modificacións implicará a aceptación das novas condicións por parte da persoa usuaria.
       </p>
     </section>
 
@@ -140,7 +140,7 @@
         Os presentes termos e condicións rexeranse e interpretaranse de conformidade coa lexislación española.
       </p>
       <p class="terms__text">
-        Para calquera controversia que poida xurdir en relación co uso de GalicianSky, as partes sométense expresamente aos Xulgados e Tribunais da cidade de Santiago de Compostela, salvo que a normativa de protección de persoas consumidoras e usuarias estableza outro foro imperativo.
+        Para calquera controversia que poida xurdir en relación co uso de OutfitSky, as partes sométense expresamente aos Xulgados e Tribunais da cidade de Santiago de Compostela, salvo que a normativa de protección de persoas consumidoras e usuarias estableza outro foro imperativo.
       </p>
     </section>
   </div>
@@ -155,7 +155,6 @@
   width: 100vw;
   padding: 2rem 1.5rem;
   color: var(--color-secondary);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
 }
 
 .terms__container {
