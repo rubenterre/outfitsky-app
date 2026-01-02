@@ -1,0 +1,26 @@
+[
+  {
+    "id": "lluvia-frio-hombre-1",
+    "nombre": "Chuvia fría urbana",
+    "genero": "hombre",
+    "clima": {
+      "minTemp": 5,
+      "maxTemp": 14,
+      "lluvia": true,
+      "viento": true
+    },
+    "productos": ["abrigo-001", "pantalon-003", "botas-lluvia-002", "paraguas-001"]
+  },
+  {
+    "id": "veran-calido-mujer-1",
+    "nombre": "Verán cálido cómodo",
+    "genero": "mujer",
+    "clima": {
+      "minTemp": 24,
+      "maxTemp": 35,
+      "lluvia": false,
+      "viento": false
+    },
+    "productos": ["top-002", "shorts-004", "sandalias-003", "gafas-sol-001"]
+  }
+]

@@ -3,7 +3,7 @@
   let active = 0;
 
   const items = [
-    { href: '/',          icon: '/assets/galicianSky_logo.svg', label: 'Inicio' },
+    { href: '/',          icon: '/assets/outfitSky_logo.svg', label: 'Inicio' },
     { href: '/profile',   icon: '/assets/profile_icon.svg',     label: 'Perfíl' },
     { href: '/locations', icon: '/assets/locations_icon.svg',   label: 'Cidades' },
     { href: '/shop',      icon: '/assets/shop_icon.svg',        label: 'Tenda' }

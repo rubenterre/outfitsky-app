@@ -86,11 +86,11 @@
         </strong>
       </p>
 
-      <ul class="about__updates-list">
-        <li class="about__updates-item">1- Mejoras generales de la aplicación</li>
-        <li class="about__updates-item">2- Sistema de alertas meterológicas</li>
-        <li class="about__updates-item">3- Mejoras en el diseño</li>
-      </ul>
+      <ol class="about__updates-list">
+        <li class="about__updates-item">Mejoras generales de la aplicación</li>
+        <li class="about__updates-item">Sistema de alertas meterológicas</li>
+        <li class="about__updates-item">Mejoras en el diseño</li>
+      </ol>
 
       <h4 class="about__title">MIT License</h4>
 
@@ -262,7 +262,6 @@
     font-size: 13px;
     font-weight: 300;
     text-align: left;
-    list-style: disc;
     padding-left: 1.5rem;
     margin-top: 0.5rem;
   }

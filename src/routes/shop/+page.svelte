@@ -3,81 +3,17 @@
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
-  const cities = [
-    { name: "Santiago de Compostela", lat: 42.8782, lon: -8.5448 },
-    { name: "Vilagarcía de Arousa", lat: 42.59, lon: -8.76 },
-    { name: "Vigo", lat: 42.24, lon: -8.72 },
-    { name: "A Coruña", lat: 43.37, lon: -8.4 },
-    { name: "Lugo", lat: 43.01, lon: -7.56 },
-    { name: "Pontevedra", lat: 42.43, lon: -8.64 },
-    { name: "Brasilia", lat: -15.72, lon: -47.93 },
-    {
-      name: "Madrid",
-      lat: 40.416775,
-      lon: -3.70379,
-    },
-    {
-      name: "Barcelona",
-      lat: 41.38879,
-      lon: 2.15899,
-    },
-    {
-      name: "Valencia",
-      lat: 39.46975,
-      lon: -0.37739,
-    },
-    {
-      name: "Sevilla",
-      lat: 37.38909,
-      lon: -5.98446,
-    },
-    {
-      name: "Bilbao",
-      lat: 43.26301,
-      lon: -2.93499,
-    },
-    {
-      name: "Zaragoza",
-      lat: 41.64882,
-      lon: -0.88909,
-    },
-    {
-      name: "Málaga",
-      lat: 36.72126,
-      lon: -4.42127,
-    },
-    {
-      name: "A Coruña",
-      lat: 43.362343,
-      lon: -8.41154,
-    },
-    {
-      name: "Santiago de Compostela",
-      lat: 42.88052,
-      lon: -8.54569,
-    },
-    {
-      name: "Valladolid",
-      lat: 41.65225,
-      lon: -4.72453,
-    },
-    {
-      name: "Murcia",
-      lat: 37.98608,
-      lon: -1.13004,
-    },
-    {
-      name: "Las Palmas de Gran Canaria",
-      lat: 28.12355,
-      lon: -15.43626,
-    },
-  ];
+import locations from '$lib/data/locations.json';
+
+  const cities = locations;
 
   let selectedCity = $state(cities[0]);
   let weatherToday = $state(null);
   let recommended = $state([]);
   let loading = $state(false);
   let errorMsg = $state("");
+    // Seleccionar género y filtrar productos por género
+  let selectedGender = "";
 
   // cuando cambie selectedCity, cargamos tiempo + outfit
   $effect(async () => {
@@ -126,51 +62,62 @@
     if (city) selectedCity = city;
   }
 
-  function getRecommendedProducts(weather) {
-    if (!weather) return [];
 
-    const { temperature, precipitation, windSpeed } = weather;
+function getRecommendedProducts(weather) {
+  if (!weather) return [];
 
-    let result = products.filter((p) => {
-      const [minT, maxT] = p.rango_temperatura;
-      return temperature >= minT && temperature <= maxT;
-    });
+  const { temperature, precipitation, windSpeed } = weather;
 
-    if (precipitation > 0.5) {
-      result = result.filter((p) => p.lluvia === true);
-    }
+  let result = products.filter((p) => {
+    const [minT, maxT] = p.rango_temperatura;
+    return temperature >= minT && temperature <= maxT;
+  });
 
-    if (windSpeed >= 25) {
-      result = result.filter(
-        (p) => p.viento === true || p.tipo === "accesorio"
-      );
-    }
-
-    const priorityTypes = [
-      "abrigo",
-      "pantalón",
-      "calzado",
-      "camiseta",
-      "accesorio",
-    ];
-
-    result.sort((a, b) => {
-      const aIndex = priorityTypes.indexOf(a.tipo);
-      const bIndex = priorityTypes.indexOf(b.tipo);
-      return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
-    });
-
-    return result.slice(0, 6);
+  if (precipitation > 0.5) {
+    result = result.filter((p) => p.lluvia === true);
   }
+
+  if (windSpeed >= 25) {
+    result = result.filter(
+      (p) => p.viento === true || p.tipo === "accesorio"
+    );
+  }
+
+  // 🔹 Filtro por xénero
+  if (selectedGender) {
+    result = result.filter(
+      (p) => p.genero === selectedGender || p.genero === "unisex"
+    );
+  }
+
+  const priorityTypes = [
+    "abrigo",
+    "pantalón",
+    "calzado",
+    "camiseta",
+    "accesorio",
+  ];
+
+  result.sort((a, b) => {
+    const aIndex = priorityTypes.indexOf(a.tipo);
+    const bIndex = priorityTypes.indexOf(b.tipo);
+    return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+  });
+
+  return result.slice(0, 6);
+}
+
+
+
 </script>
 
 <section class="shop">
-  <div class="shop__search">
+  <!--   <div class="shop__search">
     <input
       class="shop__input"
       type="search"
       name="buscar"
-      id="buscar"
+          id="buscar"
       placeholder="Buscar ropa y complementos"
     />
     <button class="shop__button" type="submit">
@@ -180,8 +127,8 @@
         alt="Icono de buscar"
       />
     </button>
-  </div>
-
+  </div> 
+  -->
   <div class="shop__filters">
     <button class="shop__filter"> Filtros </button>
   </div>
@@ -203,6 +150,15 @@
           {/each}
         </select>
       </label>
+         <label class="shop__label">
+        Escoge un género:
+      <select class="shop__select" bind:value={selectedGender}>
+        <option value="">Selecciona un género...</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+        <option value="unisex">Unisex</option>
+      </select>
+         </label>
     </div>
 
     <p class="shop__p">
@@ -307,6 +263,9 @@
   /* Select */
   .shop__select-wrapper {
     margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .shop__label {
