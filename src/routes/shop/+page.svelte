@@ -3,7 +3,7 @@
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
-import locations from '$lib/data/locations.json';
+  import locations from "$lib/data/locations.json";
 
   const cities = locations;
 
@@ -12,7 +12,7 @@ import locations from '$lib/data/locations.json';
   let recommended = $state([]);
   let loading = $state(false);
   let errorMsg = $state("");
-    // Seleccionar género y filtrar productos por género
+  // Seleccionar género y filtrar productos por género
   let selectedGender = "";
 
   // cuando cambie selectedCity, cargamos tiempo + outfit
@@ -62,53 +62,49 @@ import locations from '$lib/data/locations.json';
     if (city) selectedCity = city;
   }
 
+  function getRecommendedProducts(weather) {
+    if (!weather) return [];
 
-function getRecommendedProducts(weather) {
-  if (!weather) return [];
+    const { temperature, precipitation, windSpeed } = weather;
 
-  const { temperature, precipitation, windSpeed } = weather;
+    let result = products.filter((p) => {
+      const [minT, maxT] = p.rango_temperatura;
+      return temperature >= minT && temperature <= maxT;
+    });
 
-  let result = products.filter((p) => {
-    const [minT, maxT] = p.rango_temperatura;
-    return temperature >= minT && temperature <= maxT;
-  });
+    if (precipitation > 0.5) {
+      result = result.filter((p) => p.lluvia === true);
+    }
 
-  if (precipitation > 0.5) {
-    result = result.filter((p) => p.lluvia === true);
+    if (windSpeed >= 25) {
+      result = result.filter(
+        (p) => p.viento === true || p.tipo === "accesorio"
+      );
+    }
+
+    // 🔹 Filtro por xénero
+    if (selectedGender) {
+      result = result.filter(
+        (p) => p.genero === selectedGender || p.genero === "unisex"
+      );
+    }
+
+    const priorityTypes = [
+      "abrigo",
+      "pantalón",
+      "calzado",
+      "camiseta",
+      "accesorio",
+    ];
+
+    result.sort((a, b) => {
+      const aIndex = priorityTypes.indexOf(a.tipo);
+      const bIndex = priorityTypes.indexOf(b.tipo);
+      return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+    });
+
+    return result.slice(0, 6);
   }
-
-  if (windSpeed >= 25) {
-    result = result.filter(
-      (p) => p.viento === true || p.tipo === "accesorio"
-    );
-  }
-
-  // 🔹 Filtro por xénero
-  if (selectedGender) {
-    result = result.filter(
-      (p) => p.genero === selectedGender || p.genero === "unisex"
-    );
-  }
-
-  const priorityTypes = [
-    "abrigo",
-    "pantalón",
-    "calzado",
-    "camiseta",
-    "accesorio",
-  ];
-
-  result.sort((a, b) => {
-    const aIndex = priorityTypes.indexOf(a.tipo);
-    const bIndex = priorityTypes.indexOf(b.tipo);
-    return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
-  });
-
-  return result.slice(0, 6);
-}
-
-
-
 </script>
 
 <section class="shop">
@@ -129,6 +125,38 @@ function getRecommendedProducts(weather) {
     </button>
   </div> 
   -->
+  <div class="shop__outfits outfits">
+
+    <div class="outfits__container">
+      <div class="outfits__card">
+        <div class="outfits__title">
+          <h2 class="outfits__h2">Frío extremo</h2>
+        </div>
+        <div class="outfits__clothes">
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+        </div>
+      </div>
+    </div>
+
+        <div class="outfits__container">
+      <div class="outfits__card">
+        <div class="outfits__title">
+          <h2 class="outfits__h2">Frío extremo</h2>
+        </div>
+        <div class="outfits__clothes">
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <div class="shop__filters">
     <button class="shop__filter"> Filtros </button>
   </div>
@@ -150,15 +178,15 @@ function getRecommendedProducts(weather) {
           {/each}
         </select>
       </label>
-         <label class="shop__label">
+      <label class="shop__label">
         Escoge un género:
-      <select class="shop__select" bind:value={selectedGender}>
-        <option value="">Selecciona un género...</option>
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
-        <option value="unisex">Unisex</option>
-      </select>
-         </label>
+        <select class="shop__select" bind:value={selectedGender}>
+          <option value="">Selecciona un género...</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+          <option value="unisex">Unisex</option>
+        </select>
+      </label>
     </div>
 
     <p class="shop__p">
@@ -218,6 +246,7 @@ function getRecommendedProducts(weather) {
     padding: 3rem 2rem;
   }
 
+  /*
   .shop__search {
     width: 100%;
     border: 1px solid var(--color-primary);
@@ -248,6 +277,68 @@ function getRecommendedProducts(weather) {
   .shop__icon-search {
     height: 18.78px;
   }
+
+  */
+
+  /* Cards outfits */
+
+  .outfits {
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0px 27px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .outfits__title{
+    padding: 1rem;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+.outfits__h2{
+      font-size: 1.5rem;
+      font-weight: 600;
+}
+
+  .outfits .outfits__container {
+    width: 268px;
+    height: 420px;
+    border-radius: 27px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-tertiary);
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .outfits__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+  }
+
+.outfits__clothes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+  .outfits__img{
+    width: 118px;
+    height: 161px;
+    border-radius: 17px;
+  }
+
+  /* Filter */
 
   .shop__filters {
     padding: 1.5rem 0px;
