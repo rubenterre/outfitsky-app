@@ -1,0 +1,28 @@
+[ {
+    "id": "hh-m-verg-las-jacket",
+    "nombre": "Helly Hansen Verglas Infinity Shell 2.0 Jacket",
+    "precio_aproximado": 350,
+    "genero": "hombre",
+    "tipo_prenda": "chaqueta"
+  },
+  {
+    "id": "hh-m-hh-logo-tee",
+    "nombre": "Helly Hansen HH Logo T-Shirt",
+    "precio_aproximado": 35,
+    "genero": "hombre",
+    "tipo_prenda": "camiseta"
+  },
+  {
+    "id": "hh-m-loke-pant",
+    "nombre": "Helly Hansen Loke Men's Pant",
+    "precio_aproximado": 100,
+    "genero": "hombre",
+    "tipo_prenda": "pantalon"
+  },
+  {
+    "id": "hh-m-midsund-3",
+    "nombre": "Helly Hansen Midsund 3 Rubber Boots",
+    "precio_aproximado": 90,
+    "genero": "hombre",
+    "tipo_prenda": "botas"
+  } ] 

@@ -1,9 +1,11 @@
 <script>
   import products from "$lib/data/products.json";
+  import featuredOutfits from "$lib/data/outfits.json";
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
   import locations from "$lib/data/locations.json";
+  import Outfits from "$lib/components/Outfits.svelte";
 
   const cities = locations;
 
@@ -105,6 +107,15 @@
 
     return result.slice(0, 6);
   }
+
+  //Enviar los conjuntos de outfits al componente Outfits.svelte
+
+  const productsById = Object.fromEntries(products.map((p) => [p.id, p]));
+
+  const staticOutfits = featuredOutfits.map((outfit) => ({
+    ...outfit,
+    items: outfit.productos.map((pid) => productsById[pid]).filter(Boolean),
+  }));
 </script>
 
 <section class="shop">
@@ -125,37 +136,8 @@
     </button>
   </div> 
   -->
-  <div class="shop__outfits outfits">
 
-    <div class="outfits__container">
-      <div class="outfits__card">
-        <div class="outfits__title">
-          <h2 class="outfits__h2">Frío extremo</h2>
-        </div>
-        <div class="outfits__clothes">
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-        </div>
-      </div>
-    </div>
-
-        <div class="outfits__container">
-      <div class="outfits__card">
-        <div class="outfits__title">
-          <h2 class="outfits__h2">Frío extremo</h2>
-        </div>
-        <div class="outfits__clothes">
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <Outfits outfits={staticOutfits}></Outfits>
 
   <div class="shop__filters">
     <button class="shop__filter"> Filtros </button>
@@ -244,8 +226,8 @@
   .shop {
     width: 100vw;
     padding: 3rem 2rem;
-          max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   /*
@@ -281,64 +263,6 @@
   }
 
   */
-
-  /* Cards outfits */
-
-  .outfits {
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 0px 27px;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .outfits__title{
-    padding: 1rem;
-    display: flex;
-    justify-content: start;
-    width: 100%;
-  }
-
-.outfits__h2{
-      font-size: 1.5rem;
-      font-weight: 600;
-}
-
-  .outfits .outfits__container {
-    width: 268px;
-    height: 420px;
-    border-radius: 27px;
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-tertiary);
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  .outfits__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0px;
-  }
-
-.outfits__clothes{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-}
-
-  .outfits__img{
-    width: 118px;
-    height: 161px;
-    border-radius: 17px;
-  }
 
   /* Filter */
 
@@ -416,12 +340,12 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
+/* 
   .shop__cards {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  }
+  } */
 
   .shop__card {
     border: 1px solid var(--color-primary);
