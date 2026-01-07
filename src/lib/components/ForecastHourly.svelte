@@ -71,6 +71,7 @@
 		overflow-x: auto;
 		white-space: nowrap;
 		padding: 0px 27px;
+    
 
 		&::-webkit-scrollbar {
 			display: none;

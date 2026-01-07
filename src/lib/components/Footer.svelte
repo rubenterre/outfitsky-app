@@ -13,6 +13,8 @@
     margin: 27px;
     padding-top: 10px;
     padding-bottom: 80px;
+          max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer__img{

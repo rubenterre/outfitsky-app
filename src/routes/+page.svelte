@@ -269,6 +269,8 @@
 
   .weather-app__main {
     padding: 3rem;
+          max-width: 800px;
+  margin: 0 auto;
   }
 
   .weather-card__header {
@@ -345,6 +347,8 @@
 
   .weather-card__forecast {
     padding-top: 1rem;
+      max-width: 800px;
+  margin: 0 auto;
   }
 
   .weather-card__forecast-header {
@@ -366,6 +370,8 @@
 
   .weather-card__details {
     padding-top: 1rem;
+      max-width: 800px;
+  margin: 0 auto;
   }
 
   .weather-card__details--container {

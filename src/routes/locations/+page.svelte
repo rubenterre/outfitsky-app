@@ -51,6 +51,8 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+          max-width: 800px;
+  margin: 0 auto;
   }
 
   .locations__hero {

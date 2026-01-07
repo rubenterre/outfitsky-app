@@ -130,6 +130,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+    
 	}
 
 	.weather-card__forecast-item {
