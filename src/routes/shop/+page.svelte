@@ -1,5 +1,6 @@
 <script>
-  import products from "$lib/data/products.json";
+  import Footer from "$lib/components/Footer.svelte";
+  import products from "$lib/data/accesories.json";
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
@@ -16,30 +17,36 @@
   let selectedGender = "";
 
   // cuando cambie selectedCity, cargamos tiempo + outfit
-  $effect(async () => {
-    if (!selectedCity) return;
+ $effect(async () => {
+  if (!selectedCity) return;
 
-    loading = true;
-    errorMsg = "";
-    weatherToday = null;
-    recommended = [];
+  loading = true;
+  errorMsg = "";
+  weatherToday = null;
+  recommended = [];
 
-    const data = await obtenerDatos(selectedCity.lat, selectedCity.lon);
-    if (!data) {
-      errorMsg = "Erro ao obter os datos do tempo.";
-      loading = false;
-      return;
-    }
-
-    weatherToday = {
-      temperature: data.main?.temp ?? 0,
-      precipitation: data.rain?.["1h"] ?? data.rain?.["3h"] ?? 0,
-      windSpeed: data.wind?.speed ?? 0,
-    };
-
-    recommended = getRecommendedProducts(weatherToday);
+  const data = await obtenerDatos(selectedCity.lat, selectedCity.lon);
+  if (!data) {
+    errorMsg = "Erro ao obter os datos do tempo.";
     loading = false;
-  });
+    return;
+  }
+
+  weatherToday = {
+    temperature: data.main?.temp ?? 0,
+    precipitation: data.rain?.["1h"] ?? data.rain?.["3h"] ?? 0,
+    windSpeed: data.wind?.speed ?? 0
+  };
+
+
+  recommended = getRecommendedProducts(weatherToday);
+  loading = false;
+});
+
+$effect(() => {
+  if (!weatherToday) return;
+  recommended = getRecommendedProducts(weatherToday);
+});
 
   async function obtenerDatos(lat, lon) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=gl`;
@@ -83,9 +90,15 @@
     }
 
     // 🔹 Filtro por xénero
-    if (selectedGender) {
+/*     if (selectedGender) {
       result = result.filter(
         (p) => p.genero === selectedGender || p.genero === "unisex"
+      );
+    } */
+
+        if (selectedGender) {
+      result = result.filter(
+        (p) => p.genero === selectedGender
       );
     }
 
@@ -105,6 +118,7 @@
 
     return result.slice(0, 6);
   }
+
 </script>
 
 <section class="shop">
@@ -125,37 +139,6 @@
     </button>
   </div> 
   -->
-  <div class="shop__outfits outfits">
-
-    <div class="outfits__container">
-      <div class="outfits__card">
-        <div class="outfits__title">
-          <h2 class="outfits__h2">Frío extremo</h2>
-        </div>
-        <div class="outfits__clothes">
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-        </div>
-      </div>
-    </div>
-
-        <div class="outfits__container">
-      <div class="outfits__card">
-        <div class="outfits__title">
-          <h2 class="outfits__h2">Frío extremo</h2>
-        </div>
-        <div class="outfits__clothes">
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-          <img src="/products/hh_jacket.jpg" alt="" class="outfits__img" />
-        </div>
-      </div>
-    </div>
-
-  </div>
 
   <div class="shop__filters">
     <button class="shop__filter"> Filtros </button>
@@ -202,6 +185,7 @@
       {:else if !weatherToday || recommended.length === 0}
         <p>No hay sugerencias disponibles con el catálogo actual.</p>
       {:else}
+      <div class="shop__cards">
         {#each recommended as product}
           <div class="shop__card shop__card--hero">
             <div class="shop__img-product">
@@ -235,10 +219,13 @@
             </div>
           </div>
         {/each}
+        </div>
       {/if}
     </div>
   </div>
 </section>
+
+<Footer></Footer>
 
 <style>
   .shop {
@@ -281,64 +268,6 @@
   }
 
   */
-
-  /* Cards outfits */
-
-  .outfits {
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 0px 27px;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .outfits__title{
-    padding: 1rem;
-    display: flex;
-    justify-content: start;
-    width: 100%;
-  }
-
-.outfits__h2{
-      font-size: 1.5rem;
-      font-weight: 600;
-}
-
-  .outfits .outfits__container {
-    width: 268px;
-    height: 420px;
-    border-radius: 27px;
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-tertiary);
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  .outfits__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0px;
-  }
-
-.outfits__clothes{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-}
-
-  .outfits__img{
-    width: 118px;
-    height: 161px;
-    border-radius: 17px;
-  }
 
   /* Filter */
 
@@ -501,13 +430,20 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 80px;
+    min-width: 80px;
     padding: 3px 0px;
+    margin-right: 4px;
   }
 
   .shop__buy-text {
     color: var(--color-tertiary);
     font-size: 0.8rem;
     font-weight: 600;
+  }
+
+  @media (min-width: 800px){
+    .shop__card{
+      width: 365px;
+    }
   }
 </style>
