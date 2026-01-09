@@ -2548,7 +2548,7 @@ const options = {
   service_worker: false,
   service_worker_options: void 0,
   templates: {
-    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="es">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <link rel="manifest" href="/manifest.webmanifest" />\n    <meta name="theme-color" content="#020617" />\n\n    <!-- Meta etiquetas PWA para Apple -->\n    <meta name="apple-mobile-web-app-capable" content="yes" />\n    <meta\n      name="apple-mobile-web-app-status-bar-style"\n      content="black-translucent"\n    />\n    <link\n      rel="apple-touch-startup-image"\n      href="./assets/favicons/favicon_512.png"\n    />\n\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>\n",
+    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="es">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <link rel="manifest" href="/manifest.webmanifest" />\n    <meta name="theme-color" content="#020617" />\n\n    <link rel="preconnect" href="https://fonts.googleapis.com" />\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n    <link\n      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"\n      rel="stylesheet"\n    />\n\n    <!-- Meta etiquetas PWA para Apple -->\n    <meta name="apple-mobile-web-app-capable" content="yes" />\n    <meta\n      name="apple-mobile-web-app-status-bar-style"\n      content="black-translucent"\n    />\n    <link\n      rel="apple-touch-startup-image"\n      href="./assets/favicons/favicon_512.png"\n    />\n\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -2620,7 +2620,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "56e8k0"
+  version_hash: "f0dysw"
 };
 async function get_hooks() {
   let handle;
