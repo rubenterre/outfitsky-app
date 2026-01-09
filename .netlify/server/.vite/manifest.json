@@ -1,0 +1,278 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_environment.js"
+    ]
+  },
+  "_Footer.BTuiN_Iy.css": {
+    "file": "_app/immutable/assets/Footer.BTuiN_Iy.css",
+    "src": "_Footer.BTuiN_Iy.css"
+  },
+  "_Footer.js": {
+    "file": "chunks/Footer.js",
+    "name": "Footer",
+    "imports": [
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Footer.BTuiN_Iy.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/Ruben_Terre_Logo_blanco_131119.C9biLgO6.svg"
+    ]
+  },
+  "_attributes.js": {
+    "file": "chunks/attributes.js",
+    "name": "attributes",
+    "imports": [
+      "_escaping.js"
+    ]
+  },
+  "_context.js": {
+    "file": "chunks/context.js",
+    "name": "context"
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment"
+  },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
+  },
+  "_escaping.js": {
+    "file": "chunks/escaping.js",
+    "name": "escaping"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_utils2.js",
+      "_equality.js"
+    ]
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_attributes.js",
+      "_escaping.js",
+      "_context.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index2.js",
+      "_environment.js",
+      "_utils2.js",
+      "_equality.js",
+      "_context.js"
+    ]
+  },
+  "_locations.js": {
+    "file": "chunks/locations.js",
+    "name": "locations"
+  },
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared",
+    "imports": [
+      "_utils.js"
+    ]
+  },
+  "_state.svelte.js": {
+    "file": "chunks/state.svelte.js",
+    "name": "state.svelte",
+    "imports": [
+      "_utils2.js"
+    ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils"
+  },
+  "_utils2.js": {
+    "file": "chunks/utils2.js",
+    "name": "utils"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_shared.js",
+      "_environment.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_escaping.js",
+      "_state.svelte.js",
+      "_exports.js",
+      "_utils.js",
+      "_index.js",
+      "_context.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_shared.js",
+      "_exports.js",
+      "_utils.js",
+      "_index.js",
+      "_internal.js"
+    ]
+  },
+  "src/lib/assets/Ruben_Terre_Logo_blanco_131119.svg": {
+    "file": "_app/immutable/assets/Ruben_Terre_Logo_blanco_131119.C9biLgO6.svg",
+    "src": "src/lib/assets/Ruben_Terre_Logo_blanco_131119.svg"
+  },
+  "src/lib/assets/favicon.svg": {
+    "file": "_app/immutable/assets/favicon.D8uzqMrN.svg",
+    "src": "src/lib/assets/favicon.svg"
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_exports.js",
+      "_utils.js",
+      "_state.svelte.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.DP9oNO6f.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/favicon.D8uzqMrN.svg"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_attributes.js",
+      "_escaping.js",
+      "_Footer.js",
+      "_exports.js",
+      "_utils.js",
+      "_state.svelte.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BzyRfs9f.css"
+    ]
+  },
+  "src/routes/legal/+page.svelte": {
+    "file": "entries/pages/legal/_page.svelte.js",
+    "name": "entries/pages/legal/_page.svelte",
+    "src": "src/routes/legal/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BvVj1euP.css"
+    ]
+  },
+  "src/routes/locations/+page.svelte": {
+    "file": "entries/pages/locations/_page.svelte.js",
+    "name": "entries/pages/locations/_page.svelte",
+    "src": "src/routes/locations/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_exports.js",
+      "_utils.js",
+      "_attributes.js",
+      "_state.svelte.js",
+      "_Footer.js",
+      "_locations.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DlG4UDOT.css"
+    ]
+  },
+  "src/routes/privacidade/+page.svelte": {
+    "file": "entries/pages/privacidade/_page.svelte.js",
+    "name": "entries/pages/privacidade/_page.svelte",
+    "src": "src/routes/privacidade/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CB51Updn.css"
+    ]
+  },
+  "src/routes/profile/+page.svelte": {
+    "file": "entries/pages/profile/_page.svelte.js",
+    "name": "entries/pages/profile/_page.svelte",
+    "src": "src/routes/profile/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Footer.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DCtbGF1M.css"
+    ]
+  },
+  "src/routes/shop/+page.svelte": {
+    "file": "entries/pages/shop/_page.svelte.js",
+    "name": "entries/pages/shop/_page.svelte",
+    "src": "src/routes/shop/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Footer.js",
+      "_locations.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DpRI6tln.css"
+    ]
+  },
+  "src/routes/terminos/+page.svelte": {
+    "file": "entries/pages/terminos/_page.svelte.js",
+    "name": "entries/pages/terminos/_page.svelte",
+    "src": "src/routes/terminos/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CxCmMiqH.css"
+    ]
+  }
+}
