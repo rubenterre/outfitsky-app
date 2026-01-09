@@ -33,7 +33,6 @@ declare module '$env/static/private' {
 	export const WARP_HONOR_PS1: string;
 	export const TERM: string;
 	export const SHELL: string;
-	export const HOMEBREW_REPOSITORY: string;
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
 	export const TERM_PROGRAM_VERSION: string;
@@ -59,6 +58,7 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
 	export const npm_package_name: string;
+	export const LANG: string;
 	export const npm_config_npm_version: string;
 	export const XPC_FLAGS: string;
 	export const npm_config_node_gyp: string;
@@ -66,15 +66,13 @@ declare module '$env/static/private' {
 	export const XPC_SERVICE_NAME: string;
 	export const SHLVL: string;
 	export const HOME: string;
-	export const HOMEBREW_PREFIX: string;
 	export const npm_config_cache: string;
 	export const LOGNAME: string;
 	export const npm_lifecycle_script: string;
 	export const LC_CTYPE: string;
 	export const SSH_SOCKET_DIR: string;
 	export const npm_config_user_agent: string;
-	export const INFOPATH: string;
-	export const HOMEBREW_CELLAR: string;
+	export const OSLogRateLimit: string;
 	export const CONDA_CHANGEPS1: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
@@ -116,7 +114,6 @@ declare module '$env/dynamic/private' {
 		WARP_HONOR_PS1: string;
 		TERM: string;
 		SHELL: string;
-		HOMEBREW_REPOSITORY: string;
 		TMPDIR: string;
 		npm_config_global_prefix: string;
 		TERM_PROGRAM_VERSION: string;
@@ -142,6 +139,7 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_event: string;
 		EDITOR: string;
 		npm_package_name: string;
+		LANG: string;
 		npm_config_npm_version: string;
 		XPC_FLAGS: string;
 		npm_config_node_gyp: string;
@@ -149,15 +147,13 @@ declare module '$env/dynamic/private' {
 		XPC_SERVICE_NAME: string;
 		SHLVL: string;
 		HOME: string;
-		HOMEBREW_PREFIX: string;
 		npm_config_cache: string;
 		LOGNAME: string;
 		npm_lifecycle_script: string;
 		LC_CTYPE: string;
 		SSH_SOCKET_DIR: string;
 		npm_config_user_agent: string;
-		INFOPATH: string;
-		HOMEBREW_CELLAR: string;
+		OSLogRateLimit: string;
 		CONDA_CHANGEPS1: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
