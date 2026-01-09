@@ -1,67 +1,82 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-	import Menu from '$lib/components/Menu.svelte';
-	
-
+  import favicon from '$lib/assets/favicon.svg';
+  import Menu from '$lib/components/Menu.svelte';
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
 
   let { children } = $props();
 
-let showInstallBanner = $state(false);
+  let showInstallBanner = $state(false);
 
-// Tipo mínimo para el evento beforeinstallprompt
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
-}
+  // Tipo mínimo para el evento beforeinstallprompt
+  interface BeforeInstallPromptEvent extends Event {
+    prompt: () => Promise<void>;
+    userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
+  }
 
-let deferredPrompt = $state<BeforeInstallPromptEvent | null>(null);
+  let deferredPrompt = $state<BeforeInstallPromptEvent | null>(null);
 
-$effect(() => {
-  if (typeof window === 'undefined') return;
+  // Escuchar beforeinstallprompt / appinstalled
+  $effect(() => {
+    if (typeof window === 'undefined') return;
 
-  const handleBeforeInstall = (event: Event) => {
-    const e = event as BeforeInstallPromptEvent;
-    e.preventDefault();
-    deferredPrompt = e;
-    showInstallBanner = true;
-  };
+    const handleBeforeInstall = (event: Event) => {
+      const e = event as BeforeInstallPromptEvent;
+      e.preventDefault();
+      deferredPrompt = e;
+      showInstallBanner = true;
+    };
 
-  const handleAppInstalled = () => {
-    showInstallBanner = false;
-    deferredPrompt = null;
-  };
+    const handleAppInstalled = () => {
+      showInstallBanner = false;
+      deferredPrompt = null;
+    };
 
-  window.addEventListener('beforeinstallprompt', handleBeforeInstall);
-  window.addEventListener('appinstalled', handleAppInstalled);
+    window.addEventListener('beforeinstallprompt', handleBeforeInstall);
+    window.addEventListener('appinstalled', handleAppInstalled);
 
-  // cleanup
-  return () => {
-    window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
-    window.removeEventListener('appinstalled', handleAppInstalled);
-  };
-});
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+      window.removeEventListener('appinstalled', handleAppInstalled);
+    };
+  });
 
-async function onInstallClick() {
-  if (!deferredPrompt) return;
+  // Fallback: mostrar banner tras 5s aunque no haya evento (ej. iOS)
+  $effect(() => {
+    if (typeof window === 'undefined') return;
 
-  await deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
+    const timer = setTimeout(() => {
+      if (!deferredPrompt) {
+        showInstallBanner = true;
+      }
+    }, 5000);
 
-  if (outcome === 'accepted') {
-    showInstallBanner = false;
-    deferredPrompt = null;
-  } else {
+    return () => clearTimeout(timer);
+  });
+
+  async function onInstallClick() {
+    if (!deferredPrompt) {
+      // En iOS u otros navegadores sin evento no hay prompt
+      showInstallBanner = false;
+      return;
+    }
+
+    await deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === 'accepted') {
+      showInstallBanner = false;
+      deferredPrompt = null;
+    } else {
+      showInstallBanner = false;
+    }
+  }
+
+  function onDismiss() {
     showInstallBanner = false;
   }
-}
-
-function onDismiss() {
-  showInstallBanner = false;
-}
-
 </script>
+
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
@@ -73,9 +88,11 @@ function onDismiss() {
       ¿Quieres instalar OutfitSky en tu dispositivo para acceder más rápido?
     </p>
     <div class="pwa-banner__actions">
-      <button class="pwa-banner__button-primary" on:click={onInstallClick}>
-        Instalar
-      </button>
+      {#if deferredPrompt}
+        <button class="pwa-banner__button-primary" on:click={onInstallClick}>
+          Instalar
+        </button>
+      {/if}
       <button class="pwa-banner__button-secondary" on:click={onDismiss}>
         Ahora no
       </button>
