@@ -138,7 +138,7 @@ function onDismiss() {
 :global(.pwa-banner) {
   position: fixed;
   left: 50%;
-  bottom: 1rem;
+  top: 8rem;
   transform: translateX(-50%);
   z-index: 1000;
 
@@ -146,7 +146,7 @@ function onDismiss() {
   width: calc(100% - 2rem);
   padding: 0.9rem 1rem;
 
-  background: rgba(15, 23, 42, 0.95); /* similar a fondo oscuro */
+  background: var(--color-tertiary);
   border: 1px solid var(--color-primary);
   border-radius: 27px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -193,8 +193,8 @@ function onDismiss() {
 
 :global(.pwa-banner__button-secondary) {
   background-color: transparent;
-  color: var(--color-tertiary);
-  border-color: rgba(148, 163, 184, 0.6);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 
 :global(.pwa-banner__button-secondary:hover) {
