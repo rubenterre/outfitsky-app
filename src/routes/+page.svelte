@@ -1,10 +1,10 @@
 <script>
-  import DetailsToday from '$lib/components/DetailsToday.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import ForecastDaily from '$lib/components/ForecastDaily.svelte';
-  import ForecastHourly from '$lib/components/ForecastHourly.svelte';
-  import OthersDetails from '$lib/components/OthersDetails.svelte';
-  import { page } from '$app/stores';
+  import DetailsToday from "$lib/components/DetailsToday.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import ForecastDaily from "$lib/components/ForecastDaily.svelte";
+  import ForecastHourly from "$lib/components/ForecastHourly.svelte";
+  import OthersDetails from "$lib/components/OthersDetails.svelte";
+  import { page } from "$app/stores";
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
@@ -15,8 +15,8 @@
 
   let DEFAULT_LAT = 42.88;
   let DEFAULT_LON = -8.54;
-  let DEFAULT_IMG = '/assets/cities/Santiago_de_Compostela.png';
-  let DEFAULT_NAME = 'Santiago de Compostela';
+  let DEFAULT_IMG = "/assets/cities/Santiago_de_Compostela.png";
+  let DEFAULT_NAME = "Santiago de Compostela";
 
   let pageStore = $state(null);
 
@@ -30,17 +30,17 @@
 
   // leer ciudad favorita desde localStorage si NO hay params
   $effect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     if (!pageStore) return;
 
     const hasParams =
-      pageStore.url.searchParams.has('lat') ||
-      pageStore.url.searchParams.has('lon') ||
-      pageStore.url.searchParams.has('name');
+      pageStore.url.searchParams.has("lat") ||
+      pageStore.url.searchParams.has("lon") ||
+      pageStore.url.searchParams.has("name");
 
     if (hasParams) return;
 
-    const stored = window.localStorage.getItem('favoriteCity');
+    const stored = window.localStorage.getItem("favoriteCity");
     if (!stored) return;
 
     try {
@@ -58,19 +58,19 @@
 
   // valores derivados de la URL (usando defaults, que pueden venir de favoritos)
   let lat = $derived(
-    Number(pageStore?.url.searchParams.get('lat')) || DEFAULT_LAT
+    Number(pageStore?.url.searchParams.get("lat")) || DEFAULT_LAT
   );
 
   let lon = $derived(
-    Number(pageStore?.url.searchParams.get('lon')) || DEFAULT_LON
+    Number(pageStore?.url.searchParams.get("lon")) || DEFAULT_LON
   );
 
   let locationImg = $derived(
-    pageStore?.url.searchParams.get('img') || DEFAULT_IMG
+    pageStore?.url.searchParams.get("img") || DEFAULT_IMG
   );
 
   let locationName = $derived(
-    pageStore?.url.searchParams.get('name') || DEFAULT_NAME
+    pageStore?.url.searchParams.get("name") || DEFAULT_NAME
   );
 
   async function obtenerDatos(lat, lon) {
@@ -83,7 +83,7 @@
       }
       return await response.json();
     } catch (error) {
-      console.error('Erro ao obter os datos do tempo:', error);
+      console.error("Erro ao obter os datos do tempo:", error);
       return null;
     }
   }
@@ -96,10 +96,9 @@
 
   function obterDataActual() {
     const data = new Date();
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return data.toLocaleDateString('es-ES', options);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return data.toLocaleDateString("es-ES", options);
   }
-
 </script>
 
 {#if dataWeather}
@@ -187,7 +186,7 @@
 
   <Footer></Footer>
 {:else}
- <div class="weather-app">
+  <div class="weather-app">
     <main class="weather-app__main">
       <section class="weather-card">
         <div class="row">
@@ -209,20 +208,14 @@
                   aria-hidden="true"
                 />
               </div>
-              <p class="weather-card__temperature">
-                0°
-              </p>
+              <p class="weather-card__temperature">0°</p>
               <p class="weather-card__description">
                 Descripción del tiempo desconocida
               </p>
               <p class="weather-card__range">
-                <span class="weather-card__range-max"
-                  >Max. 0°</span
-                >
+                <span class="weather-card__range-max">Max. 0°</span>
                 <span class="weather-card__range-separator">|</span>
-                <span class="weather-card__range-min"
-                  >Min. 0°</span
-                >
+                <span class="weather-card__range-min">Min. 0°</span>
               </p>
             </div>
           </div>
@@ -236,11 +229,7 @@
           />
         </figure>
 
-        <DetailsToday
-          feelsLike="0"
-          humidity="0"
-          wind="0"
-        ></DetailsToday>
+        <DetailsToday feelsLike="0" humidity="0" wind="0"></DetailsToday>
       </section>
     </main>
   </div>
@@ -249,14 +238,14 @@
       <p class="weather-card__forecast-title">Pronóstico por horas</p>
     </header>
 
-      <p class="weather-card__p--desconnect">Sin detalles</p>
+    <p class="weather-card__p--desconnect">Sin detalles</p>
   </section>
   <section class="weather-card__forecast">
     <header class="weather-card__forecast-header">
       <p class="weather-card__forecast-title">Pronóstico por días</p>
     </header>
 
-      <p class="weather-card__p--desconnect">Sin detalles</p>
+    <p class="weather-card__p--desconnect">Sin detalles</p>
   </section>
 
   <section class="weather-card__details">
@@ -269,7 +258,6 @@
     </div>
   </section>
   <Footer></Footer>
-
 {/if}
 
 <style>
@@ -291,8 +279,8 @@
 
   .weather-app__main {
     padding: 3rem;
-          max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .weather-card__header {
@@ -307,11 +295,13 @@
     color: var(--color-primary);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    text-decoration: none;
   }
 
   .weather-card__date {
     font-size: 1rem;
     font-weight: 600;
+    text-decoration: none;
   }
 
   .weather-card__current {
@@ -335,6 +325,7 @@
     font-size: 4.5rem;
     font-weight: 600;
     color: var(--color-primary);
+    text-decoration: none;
   }
 
   .weather-card__description {
@@ -369,8 +360,8 @@
 
   .weather-card__forecast {
     padding-top: 1rem;
-      max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .weather-card__forecast-header {
@@ -392,15 +383,15 @@
 
   .weather-card__details {
     padding-top: 1rem;
-      max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .weather-card__details--container {
     padding: 0px 27px;
   }
 
-  .weather-card__p--desconnect{
+  .weather-card__p--desconnect {
     text-align: center;
   }
 </style>
