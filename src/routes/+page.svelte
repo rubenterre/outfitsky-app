@@ -1,9 +1,10 @@
 <script>
-  import DetailsToday from "$lib/components/DetailsToday.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import ForecastDaily from "$lib/components/ForecastDaily.svelte";
-  import ForecastHourly from "$lib/components/ForecastHourly.svelte";
-  import OthersDetails from "$lib/components/OthersDetails.svelte";
+  import DetailsToday from '$lib/components/DetailsToday.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import ForecastDaily from '$lib/components/ForecastDaily.svelte';
+  import ForecastHourly from '$lib/components/ForecastHourly.svelte';
+  import OthersDetails from '$lib/components/OthersDetails.svelte';
+  import { page } from '$app/stores';
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
 
@@ -12,16 +13,14 @@
 
   let { city } = $props();
 
-  import { page } from "$app/stores";
-
   let DEFAULT_LAT = 42.88;
   let DEFAULT_LON = -8.54;
   let DEFAULT_IMG = '/assets/cities/Santiago_de_Compostela.png';
   let DEFAULT_NAME = 'Santiago de Compostela';
 
-  // leer la store como runa
   let pageStore = $state(null);
 
+  // leer la store page
   $effect(() => {
     const unsub = page.subscribe((value) => {
       pageStore = value;
@@ -29,24 +28,51 @@
     return () => unsub();
   });
 
-  // valores derivados de la URL
+  // leer ciudad favorita desde localStorage si NO hay params
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    if (!pageStore) return;
+
+    const hasParams =
+      pageStore.url.searchParams.has('lat') ||
+      pageStore.url.searchParams.has('lon') ||
+      pageStore.url.searchParams.has('name');
+
+    if (hasParams) return;
+
+    const stored = window.localStorage.getItem('favoriteCity');
+    if (!stored) return;
+
+    try {
+      const fav = JSON.parse(stored);
+      if (fav.lat && fav.lon && fav.img && fav.name) {
+        DEFAULT_LAT = Number(fav.lat);
+        DEFAULT_LON = Number(fav.lon);
+        DEFAULT_IMG = fav.img;
+        DEFAULT_NAME = fav.name;
+      }
+    } catch {
+      // si falla el parse, ignora
+    }
+  });
+
+  // valores derivados de la URL (usando defaults, que pueden venir de favoritos)
   let lat = $derived(
-    Number(pageStore?.url.searchParams.get("lat")) || DEFAULT_LAT
+    Number(pageStore?.url.searchParams.get('lat')) || DEFAULT_LAT
   );
 
   let lon = $derived(
-    Number(pageStore?.url.searchParams.get("lon")) || DEFAULT_LON
+    Number(pageStore?.url.searchParams.get('lon')) || DEFAULT_LON
   );
 
   let locationImg = $derived(
-    pageStore?.url.searchParams.get("img") || DEFAULT_IMG
+    pageStore?.url.searchParams.get('img') || DEFAULT_IMG
   );
 
   let locationName = $derived(
-    pageStore?.url.searchParams.get("name") || DEFAULT_NAME
+    pageStore?.url.searchParams.get('name') || DEFAULT_NAME
   );
 
-  //Datos hoxe
   async function obtenerDatos(lat, lon) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
 
@@ -55,29 +81,25 @@
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data = await response.json();
-      return data;
+      return await response.json();
     } catch (error) {
-      console.error("Erro ao obter os datos do tempo:", error);
+      console.error('Erro ao obter os datos do tempo:', error);
       return null;
     }
   }
 
   $effect(async () => {
-    const [weather, forecast] = await Promise.all([obtenerDatos(lat, lon)]);
+    const weather = await obtenerDatos(lat, lon);
     dataWeather = weather;
-    dataLocation = {
-      lat: lat,
-      lon: lon,
-    };
+    dataLocation = { lat, lon };
   });
 
-  // Función para obter a data actual en galego
   function obterDataActual() {
     const data = new Date();
-    const options = { day: "numeric", month: "long", year: "numeric" };
-    return data.toLocaleDateString("es-ES", options);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return data.toLocaleDateString('es-ES', options);
   }
+
 </script>
 
 {#if dataWeather}
