@@ -107,7 +107,7 @@ Abre `http://localhost:5173` en el navegador.
 
 ## Futuras mejoras
 
-- Historial de búsqueda / ciudades favoritas. [4]
+- Historial de búsqueda / ciudades favoritas.
 - Más tipos de producto (home office, viaje, etc.) ligados a condiciones de clima.  
 - Internacionalización (es, gl, en).  
 - Tests básicos de la lógica de recomendación.
