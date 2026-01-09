@@ -296,12 +296,16 @@
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     text-decoration: none;
+      -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   }
 
   .weather-card__date {
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
+      -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   }
 
   .weather-card__current {
@@ -326,6 +330,8 @@
     font-weight: 600;
     color: var(--color-primary);
     text-decoration: none;
+      -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   }
 
   .weather-card__description {
