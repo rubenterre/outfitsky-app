@@ -21,8 +21,6 @@ function _page($$renderer, $$props) {
     }
     $$renderer2.push(`<!--]--></div></section> `);
     Footer($$renderer2);
-    $$renderer2.push(`<!----> `);
-    Footer($$renderer2);
     $$renderer2.push(`<!---->`);
   });
 }

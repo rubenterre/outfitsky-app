@@ -115,8 +115,6 @@ function toggleFavorite(name) {
 
 <Footer />
 
-<Footer></Footer>
-
 <style>
   .locations {
     width: 100vw;
