@@ -110,7 +110,7 @@ function onDismiss() {
 
 @font-face{
 	font-family: Montserrat;
-	src: "/fonts/Montserrat-VariableFont_wght.ttf";
+	src: "./fonts/Montserrat-VariableFont_wght.ttf";
 }
 
 :root{
