@@ -5,7 +5,7 @@
     "lon": -8.4,
     "id": "coruna",
     "icon": "/assets/minicities/ACoruna.png",
-    "img": "/assets/cities/ACoruna.png"
+    "img": "/assets/cities/ACoruna.avif"
   },
   {
     "name": "Barcelona",
@@ -13,7 +13,7 @@
     "lon": 2.15899,
     "id": "barcelona",
     "icon": "/assets/minicities/Barcelona.png",
-    "img": "/assets/cities/Barcelona.png"
+    "img": "/assets/cities/Barcelona.avif"
   },
   {
     "name": "Bilbao",
@@ -21,7 +21,7 @@
     "lon": -2.93499,
     "id": "bilbao",
     "icon": "/assets/minicities/Bilbao.png",
-    "img": "/assets/cities/Bilbao.png"
+    "img": "/assets/cities/Bilbao.avif"
   },
   {
     "name": "Las Palmas de G.C.",
@@ -29,7 +29,7 @@
     "lon": -15.43626,
     "id": "palmas",
     "icon": "/assets/minicities/Las_Palmas.png",
-    "img": "/assets/cities/Las_Palmas.png"
+    "img": "/assets/cities/Las_Palmas.avif"
   },
   {
     "name": "Lugo",
@@ -37,7 +37,7 @@
     "lon": -7.56,
     "id": "lugo",
     "icon": "/assets/minicities/Lugo.png",
-    "img": "/assets/cities/Lugo.png"
+    "img": "/assets/cities/Lugo.avif"
   },
   {
     "name": "Madrid",
@@ -45,7 +45,7 @@
     "lon": -3.70379,
     "id": "madrid",
     "icon": "/assets/minicities/Madrid.png",
-    "img": "/assets/cities/Madrid.png"
+    "img": "/assets/cities/Madrid.avif"
   },
   {
     "name": "Málaga",
@@ -53,7 +53,7 @@
     "lon": -4.42127,
     "id": "malaga",
     "icon": "/assets/minicities/Malaga.png",
-    "img": "/assets/cities/Malaga.png"
+    "img": "/assets/cities/Malaga.avif"
   },
   {
     "name": "Murcia",
@@ -61,7 +61,7 @@
     "lon": -1.13004,
     "id": "murcia",
     "icon": "/assets/minicities/Murcia.png",
-    "img": "/assets/cities/Murcia.png"
+    "img": "/assets/cities/Murcia.avif"
   },
   {
     "name": "Pontevedra",
@@ -69,7 +69,7 @@
     "lon": -8.64,
     "id": "pontevedra",
     "icon": "/assets/minicities/Pontevedra.png",
-    "img": "/assets/cities/Pontevedra.png"
+    "img": "/assets/cities/Pontevedra.avif"
   },
   {
     "name": "Santiago de Compostela",
@@ -77,7 +77,7 @@
     "lon": -8.5448,
     "id": "santiago",
     "icon": "/assets/minicities/Santiago_de_Compostela.png",
-    "img": "/assets/cities/Santiago_de_Compostela.png"
+    "img": "/assets/cities/Santiago_de_Compostela.avif"
   },
   {
     "name": "Sevilla",
@@ -85,7 +85,7 @@
     "lon": -5.98446,
     "id": "sevilla",
     "icon": "/assets/minicities/Sevilla.png",
-    "img": "/assets/cities/Sevilla.png"
+    "img": "/assets/cities/Sevilla.avif"
   },
   {
     "name": "Valencia",
@@ -93,7 +93,7 @@
     "lon": -0.37739,
     "id": "valencia",
     "icon": "/assets/minicities/Valencia.png",
-    "img": "/assets/cities/Valencia.png"
+    "img": "/assets/cities/Valencia.avif"
   },
   {
     "name": "Valladolid",
@@ -101,7 +101,7 @@
     "lon": -4.72453,
     "id": "valladolid",
     "icon": "/assets/minicities/Valladolid.png",
-    "img": "/assets/cities/Valladolid.png"
+    "img": "/assets/cities/Valladolid.avif"
   },
   {
     "name": "Vigo",
@@ -109,7 +109,7 @@
     "lon": -8.72,
     "id": "vigo",
     "icon": "/assets/minicities/Vigo.png",
-    "img": "/assets/cities/Vigo.png"
+    "img": "/assets/cities/Vigo.avif"
   },
   {
     "name": "Vilagarcía de Arousa",
@@ -117,7 +117,7 @@
     "lon": -8.76,
     "id": "vilagarcia",
     "icon": "/assets/minicities/Vilagarcia_de_Arousa.png",
-    "img": "/assets/cities/Vilagarcia_de_Arousa.png"
+    "img": "/assets/cities/Vilagarcia_de_Arousa.avif"
   },
   {
     "name": "Zaragoza",
@@ -125,6 +125,6 @@
     "lon": -0.88909,
     "id": "zaragoza",
     "icon": "/assets/minicities/Zaragoza.png",
-    "img": "/assets/cities/Zaragoza.png"
+    "img": "/assets/cities/Zaragoza.avif"
   }
 ]

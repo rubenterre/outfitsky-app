@@ -134,7 +134,7 @@ function toggleFavorite(name) {
   }
 
   .locations__logo {
-    min-width: 106px;
+    width: 106px;
   }
 
   .locations__title {

@@ -20,11 +20,14 @@
 
 <div class="about">
   <div class="about__header">
-    <img
+    <div class="about__icon">
+          <img
       class="about__app-logo"
       src="/assets/outfitSky_logo.svg"
       alt="Logo de OutfitSky"
     />
+    </div>
+
   </div>
 
   <section class="about__section">
@@ -95,7 +98,7 @@
       <h4 class="about__title">MIT License</h4>
 
       <p class="about__version">
-        Copyright (c) 2020 Rubén Terré - Diseño & Desarrollo web
+        Copyright (c) 2026 Rubén Terré - Diseño & Desarrollo web
       </p>
 
       <p class="about__license-text">
@@ -144,8 +147,27 @@
     padding-bottom: 0;
   }
 
+  .about__icon{
+      width: 100px;
+  height: 100px;
+  border-radius: 25%; /* O 50% para círculos */
+  overflow: hidden; /* Importante para contener los efectos */
+  position: relative;
+  /* Fondo degradado para simular refracción */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  /* Efecto principal de vidrio */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Para Safari */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
   .about__app-logo {
-    width: 80px;
+  width: 70%;
+  object-fit: contain;
+  filter: brightness(1.2);
   }
 
   /* sección principal */

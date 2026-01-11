@@ -15,7 +15,7 @@
 
   let DEFAULT_LAT = 42.88;
   let DEFAULT_LON = -8.54;
-  let DEFAULT_IMG = "/assets/cities/Santiago_de_Compostela.png";
+  let DEFAULT_IMG = "/assets/cities/Santiago_de_Compostela.avif";
   let DEFAULT_NAME = "Santiago de Compostela";
 
   let pageStore = $state(null);
@@ -144,11 +144,13 @@
         </div>
 
         <figure class="weather-card__landmark">
-          <img
-            src={locationImg}
-            alt="Catedral de Santiago de Compostela"
-            class="weather-card__landmark-image"
-          />
+          <picture>
+            <img
+              src={locationImg}
+              alt="Catedral de Santiago de Compostela"
+              class="weather-card__landmark-image"
+            />
+          </picture>
         </figure>
 
         <DetailsToday
@@ -222,11 +224,13 @@
         </div>
 
         <figure class="weather-card__landmark">
+          <picture>
           <img
-            src={locationImg}
-            alt="Catedral de Santiago de Compostela"
-            class="weather-card__landmark-image"
-          />
+              src={locationImg}
+              alt="Catedral de Santiago de Compostela"
+              class="weather-card__landmark-image"
+            />
+          </picture>
         </figure>
 
         <DetailsToday feelsLike="0" humidity="0" wind="0"></DetailsToday>

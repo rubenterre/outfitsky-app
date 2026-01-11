@@ -41,18 +41,40 @@
     };
   });
 
-  // Fallback: mostrar banner tras 5s aunque no haya evento (ej. iOS)
-  $effect(() => {
-    if (typeof window === 'undefined') return;
+  let isIOS = $state(false);
+let isInFullscreen = $state(false);
 
-    const timer = setTimeout(() => {
-      if (!deferredPrompt) {
+$effect(() => {
+  if (typeof window === 'undefined') return;
+
+  const ua = window.navigator.userAgent || window.navigator.vendor;
+
+  // detección simple de iOS (iPhone/iPad/iPod)
+  isIOS = /iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream;
+
+  // si ya está instalada como app (fullscreen)
+  isInFullscreen =
+    window.matchMedia('(display-mode: fullscreen)').matches ||
+    (window.navigator as any).fullscreen === true;
+});
+
+
+  // Fallback: mostrar banner tras 5s aunque no haya evento (ej. iOS)
+ $effect(() => {
+  if (typeof window === 'undefined') return;
+
+  const timer = setTimeout(() => {
+    if (!deferredPrompt) {
+      // en iOS u otros sin evento
+      if (!isInFullscreen) {
         showInstallBanner = true;
       }
-    }, 5000);
+    }
+  }, 5000);
 
-    return () => clearTimeout(timer);
-  });
+  return () => clearTimeout(timer);
+});
+
 
   async function onInstallClick() {
     if (!deferredPrompt) {
@@ -84,21 +106,31 @@
 
 {#if showInstallBanner}
   <div class="pwa-banner">
-    <p class="pwa-banner__text">
-      ¿Quieres instalar OutfitSky en tu dispositivo para acceder más rápido?
-    </p>
+    {#if isIOS && !deferredPrompt}
+      <p class="pwa-banner__text">
+        Para instalar OutfitSky en tu iPhone, toca el icono de compartir
+        de Safari y selecciona <strong>Añadir a pantalla de inicio</strong>.
+      </p>
+    {:else}
+      <p class="pwa-banner__text">
+        ¿Quieres instalar OutfitSky en tu dispositivo para acceder más rápido?
+      </p>
+    {/if}
+
     <div class="pwa-banner__actions">
       {#if deferredPrompt}
         <button class="pwa-banner__button-primary" on:click={onInstallClick}>
           Instalar
         </button>
       {/if}
+
       <button class="pwa-banner__button-secondary" on:click={onDismiss}>
         Ahora no
       </button>
     </div>
   </div>
 {/if}
+
 
 
 {#key $page.url.pathname}
@@ -158,7 +190,7 @@
 :global(.pwa-banner) {
   position: fixed;
   left: 50%;
-  top: 8rem;
+  top: 1rem;
   transform: translateX(-50%);
   z-index: 1000;
 

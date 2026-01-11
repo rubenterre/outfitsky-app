@@ -160,14 +160,14 @@
     "isEntry": true,
     "imports": [
       "_index2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_exports.js",
       "_utils.js",
-      "_state.svelte.js"
+      "_attributes.js",
+      "_state.svelte.js",
+      "_escaping.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.Dzkgn7Lf.css"
+      "_app/immutable/assets/_layout.DT9wTXtD.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.D8uzqMrN.svg"
@@ -218,7 +218,7 @@
       "_escaping.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CQBvT7jp.css"
+      "_app/immutable/assets/_page.Bw6OtUaB.css"
     ]
   },
   "src/routes/privacidade/+page.svelte": {
@@ -245,7 +245,7 @@
       "_escaping.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DCtbGF1M.css"
+      "_app/immutable/assets/_page.5g0gD-l5.css"
     ]
   },
   "src/routes/shop/+page.svelte": {

@@ -1,18 +1,59 @@
 <script>
-  // índice del activo según el orden en el DOM
-  let active = 0;
+  import { page } from '$app/stores';
+
+  let active = $state(0);
 
   const items = [
-    { href: '/',          icon: '/assets/outfitSky_logo.svg', label: 'Inicio' },
-    { href: '/profile',   icon: '/assets/profile_icon.svg',     label: 'Perfíl' },
-    { href: '/locations', icon: '/assets/locations_icon.svg',   label: 'Cidades' },
-    { href: '/shop',      icon: '/assets/shop_icon.svg',        label: 'Tenda' }
+    { href: '/',          icon: '/assets/home.svg',      label: 'Inicio' },
+    { href: '/profile',   icon: '/assets/profile_icon.svg',   label: 'Perfíl' },
+    { href: '/locations', icon: '/assets/locations_icon.svg', label: 'Cidades' },
+    { href: '/shop',      icon: '/assets/shop_icon.svg',      label: 'Tenda' }
   ];
+
+  const STORAGE_KEY = 'menuActiveIndex';
+
+  // 1) Inicializar desde localStorage (solo cliente)
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored !== null) {
+      const value = Number(stored);
+      if (!Number.isNaN(value) && value >= 0 && value < items.length) {
+        active = value;
+      }
+    }
+  });
+
+  // 2) Actualizar `active` cuando cambie la ruta
+  $effect(() => {
+    const { url } = $page;
+    const path = url.pathname;
+
+    const idx = items.findIndex((item) =>
+      item.href === '/'
+        ? path === '/'
+        : path.startsWith(item.href)
+    );
+
+    if (idx !== -1) {
+      active = idx;
+    }
+  });
+
+  // 3) Guardar en localStorage cuando cambie `active`
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    window.localStorage.setItem(STORAGE_KEY, String(active));
+  });
+
+  function handleClick(i) {
+    active = i;
+  }
 </script>
+
 
 <div class="menu">
   <div class="menu__container">
-    <!-- blob que se mueve -->
     <div class="menu__highlight" style={`--index:${active}`}></div>
 
     {#each items as item, i}
@@ -20,7 +61,7 @@
         href={item.href}
         class="menu__a"
         class:menu__a--active={i === active}
-        on:click={() => (active = i)}
+        on:click={() => handleClick(i)}
       >
         <img class="menu__img" src={item.icon} alt={item.label} />
         <p class="menu__p">{item.label}</p>
@@ -28,6 +69,8 @@
     {/each}
   </div>
 </div>
+
+
 
 
 <style>
@@ -115,6 +158,8 @@
 
 .menu__img {
   height: 25px;
+  display: block;
+  margin: 0 auto;
 }
 
 </style>
