@@ -24,7 +24,7 @@
           <img src="{humidityIcon}" alt="Icono de humedad" class="weather-card__detail-icon weather-card__detail-icon--humidity" aria-hidden="true">
           <div class="weather-card__detail-text">
             <span class="weather-card__detail-value">{humidity}%</span>
-            <span class="weather-card__detail-label">Humidade</span>
+            <span class="weather-card__detail-label">Humedad</span>
           </div>
         </div>
 
@@ -32,7 +32,7 @@
           <img src="{windIcon}" alt="Icono de velocidad del viento" class="weather-card__detail-icon weather-card__detail-icon--wind" aria-hidden="true">
           <div class="weather-card__detail-text">
             <span class="weather-card__detail-value">{wind}km/h</span>
-            <span class="weather-card__detail-label">Vento</span>
+            <span class="weather-card__detail-label">Viento</span>
           </div>
         </div>
       </section>

@@ -6,8 +6,8 @@
   const items = [
     { href: '/',          icon: '/assets/home.svg',      label: 'Inicio' },
     { href: '/profile',   icon: '/assets/profile_icon.svg',   label: 'Perfíl' },
-    { href: '/locations', icon: '/assets/locations_icon.svg', label: 'Cidades' },
-    { href: '/shop',      icon: '/assets/shop_icon.svg',      label: 'Tenda' }
+    { href: '/locations', icon: '/assets/locations_icon.svg', label: 'Ciudades' },
+    { href: '/shop',      icon: '/assets/shop_icon.svg',      label: 'Tienda' }
   ];
 
   const STORAGE_KEY = 'menuActiveIndex';

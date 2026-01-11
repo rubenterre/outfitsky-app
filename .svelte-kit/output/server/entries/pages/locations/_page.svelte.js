@@ -13,7 +13,7 @@ function _page($$renderer, $$props) {
     let { city } = $$props;
     const cidades = locations;
     let favoriteCityName = null;
-    $$renderer2.push(`<section class="locations svelte-hgrkjr"><div class="locations__hero svelte-hgrkjr"><img src="/assets/outfitSky_logo.svg" alt="Logo de OutfitSky" class="locations__logo svelte-hgrkjr"/> <div class="locations__title svelte-hgrkjr"><h2 class="locations__h2 svelte-hgrkjr">OutfitSky</h2> <p class="locations__p svelte-hgrkjr">La app del tiempo que te viste</p></div></div> <div class="locations__container svelte-hgrkjr"><!--[-->`);
+    $$renderer2.push(`<section class="locations svelte-hgrkjr"><div class="locations__hero svelte-hgrkjr"><div class="locations__logo-container svelte-hgrkjr"><img src="/assets/outfitSky_logo.svg" alt="Logo de OutfitSky" class="locations__logo svelte-hgrkjr"/></div> <div class="locations__title svelte-hgrkjr"><h2 class="locations__h2 svelte-hgrkjr">OutfitSky</h2> <p class="locations__p svelte-hgrkjr">La app del tiempo que te viste</p></div></div> <div class="locations__container svelte-hgrkjr"><!--[-->`);
     const each_array = ensure_array_like(cidades);
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let c = each_array[$$index];

@@ -9,19 +9,18 @@
   let favoriteCityName = $state(null);
 
   // Cargar ciudad favorita desde localStorage
-$effect(() => {
-  if (typeof window === 'undefined') return;
-  const stored = window.localStorage.getItem('favoriteCity');
-  if (stored) {
-    try {
-      const parsed = JSON.parse(stored);
-      favoriteCityName = parsed.name;
-    } catch {
-      favoriteCityName = null;
+  $effect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("favoriteCity");
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        favoriteCityName = parsed.name;
+      } catch {
+        favoriteCityName = null;
+      }
     }
-  }
-});
-
+  });
 
   function selectCity(lat, lon, img, name) {
     city = { lat, lon, img, name };
@@ -36,39 +35,41 @@ $effect(() => {
     goto(`/?${params.toString()}`);
   }
 
-function toggleFavorite(name) {
-  if (typeof window === 'undefined') return;
+  function toggleFavorite(name) {
+    if (typeof window === "undefined") return;
 
-  const cityData = cidades.find((c) => c.name === name);
+    const cityData = cidades.find((c) => c.name === name);
 
-  if (!cityData) return;
+    if (!cityData) return;
 
-  if (favoriteCityName === name) {
-    favoriteCityName = null;
-    window.localStorage.removeItem('favoriteCity');
-  } else {
-    favoriteCityName = name;
-    window.localStorage.setItem(
-      'favoriteCity',
-      JSON.stringify({
-        name: cityData.name,
-        lat: cityData.lat,
-        lon: cityData.lon,
-        img: cityData.img
-      })
-    );
+    if (favoriteCityName === name) {
+      favoriteCityName = null;
+      window.localStorage.removeItem("favoriteCity");
+    } else {
+      favoriteCityName = name;
+      window.localStorage.setItem(
+        "favoriteCity",
+        JSON.stringify({
+          name: cityData.name,
+          lat: cityData.lat,
+          lon: cityData.lon,
+          img: cityData.img,
+        })
+      );
+    }
   }
-}
-
 </script>
 
 <section class="locations">
   <div class="locations__hero">
-    <img
-      src="/assets/outfitSky_logo.svg"
-      alt="Logo de OutfitSky"
-      class="locations__logo"
-    />
+    <div class="locations__logo-container">
+      <img
+        src="/assets/outfitSky_logo.svg"
+        alt="Logo de OutfitSky"
+        class="locations__logo"
+      />
+    </div>
+
     <div class="locations__title">
       <h2 class="locations__h2">OutfitSky</h2>
       <p class="locations__p">La app del tiempo que te viste</p>
@@ -76,40 +77,40 @@ function toggleFavorite(name) {
   </div>
 
   <div class="locations__container">
-{#each cidades as c}
-  <button
-    type="button"
-    class="locations__button"
-    on:click={() => selectCity(c.lat, c.lon, c.img, c.name)}
-  >
-    <div class="locations__info">
-      <img class="locations__icon" src={c.icon} alt={c.name} />
-      <h4 class="locations__h4">{c.name}</h4>
-    </div>
+    {#each cidades as c}
+      <button
+        type="button"
+        class="locations__button"
+        on:click={() => selectCity(c.lat, c.lon, c.img, c.name)}
+      >
+        <div class="locations__info">
+          <img class="locations__icon" src={c.icon} alt={c.name} />
+          <h4 class="locations__h4">{c.name}</h4>
+        </div>
 
-    <span
-      class="locations__favorite"
-      role="button"
-      tabindex="0"
-      aria-label={favoriteCityName === c.name
-        ? 'Quitar ' + c.name + ' de favoritas'
-        : 'Marcar ' + c.name + ' como favorita'}
-      on:click={(event) => {
-        event.stopPropagation();
-        toggleFavorite(c.name);
-      }}
-      on:keydown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          event.stopPropagation();
-          toggleFavorite(c.name);
-        }
-      }}
-    >
-      {favoriteCityName === c.name ? '★' : '☆'}
-    </span>
-  </button>
-{/each}
+        <span
+          class="locations__favorite"
+          role="button"
+          tabindex="0"
+          aria-label={favoriteCityName === c.name
+            ? "Quitar " + c.name + " de favoritas"
+            : "Marcar " + c.name + " como favorita"}
+          on:click={(event) => {
+            event.stopPropagation();
+            toggleFavorite(c.name);
+          }}
+          on:keydown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              event.stopPropagation();
+              toggleFavorite(c.name);
+            }
+          }}
+        >
+          {favoriteCityName === c.name ? "★" : "☆"}
+        </span>
+      </button>
+    {/each}
   </div>
 </section>
 
@@ -130,21 +131,50 @@ function toggleFavorite(name) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+  }
+
+  .locations__logo-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 25%; /* O 50% para círculos */
+    overflow: hidden; /* Importante para contener los efectos */
+    position: relative;
+    /* Fondo degradado para simular refracción */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
+    /* Efecto principal de vidrio */
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%); /* Para Safari */
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+      0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .locations__logo {
-    width: 106px;
+    width: 70%;
+    object-fit: contain;
+    filter: brightness(1.2);
   }
+  /* 
+  .locations__logo {
+    width: 106px;
+  } */
 
   .locations__title {
-    text-align: center;
+    padding-top: 2rem;
   }
 
   .locations__h2 {
-    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 5px;
+    text-align: center;
   }
 
   .locations__p {
@@ -186,47 +216,46 @@ function toggleFavorite(name) {
     font-size: 1rem;
   }
 
-/* Estrella de favoritos */
-.locations__button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  border: 1px solid var(--color-primary);
-  border-radius: 27px;
-  height: 60px;
-  padding: 0 18px 0 30px;
-  background: linear-gradient(
-    180deg,
-    rgba(80, 80, 80, 0.48) 0%,
-    rgba(1, 5, 8, 1) 100%
-  );
-}
+  /* Estrella de favoritos */
+  .locations__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border: 1px solid var(--color-primary);
+    border-radius: 27px;
+    height: 60px;
+    padding: 0 18px 0 30px;
+    background: linear-gradient(
+      180deg,
+      rgba(80, 80, 80, 0.48) 0%,
+      rgba(1, 5, 8, 1) 100%
+    );
+  }
 
-.locations__info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  .locations__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.locations__favorite {
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-}
+  .locations__favorite {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
 
-.locations__favorite:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
+  .locations__favorite:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 
-.locations__favorite:hover {
-  transform: scale(1.1);
-}
-
+  .locations__favorite:hover {
+    transform: scale(1.1);
+  }
 </style>

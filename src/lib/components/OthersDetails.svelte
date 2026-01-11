@@ -67,7 +67,7 @@
         <span class="weather-card__detail-value"
           >{dataWeather.visibility / 1000}km</span
         >
-        <span class="weather-card__detail-label">Visibilidade</span>
+        <span class="weather-card__detail-label">Visibilidad</span>
       </div>
     </div>
   {/if}
@@ -122,7 +122,7 @@
           minute: "2-digit",
         })}h</span
       >
-      <span class="weather-card__detail-label">Solpor</span>
+      <span class="weather-card__detail-label">Ocaso</span>
     </div>
   </div>
 </section>

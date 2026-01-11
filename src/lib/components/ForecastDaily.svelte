@@ -12,7 +12,7 @@
   async function obtenerPronosticoHoras(lat, lon) {
     const url =
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}` +
-      `&appid=${API_KEY}&units=metric&lang=gl`;
+      `&appid=${API_KEY}&units=metric&lang=es`;
 
     try {
       const response = await fetch(url);
@@ -76,7 +76,7 @@
 
   function formatDate(dateStr) {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('gl-ES', {
+    return d.toLocaleDateString('es-ES', {
       weekday: 'long',
       day: 'numeric',
       month: 'short'

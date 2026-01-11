@@ -20,9 +20,13 @@ function Menu($$renderer, $$props) {
       {
         href: "/locations",
         icon: "/assets/locations_icon.svg",
-        label: "Cidades"
+        label: "Ciudades"
       },
-      { href: "/shop", icon: "/assets/shop_icon.svg", label: "Tenda" }
+      {
+        href: "/shop",
+        icon: "/assets/shop_icon.svg",
+        label: "Tienda"
+      }
     ];
     $$renderer2.push(`<div class="menu svelte-15gydnd"><div class="menu__container svelte-15gydnd"><div class="menu__highlight svelte-15gydnd"${attr_style(`--index:${active}`)}></div> <!--[-->`);
     const each_array = ensure_array_like(items);
