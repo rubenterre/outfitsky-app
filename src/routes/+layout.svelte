@@ -113,7 +113,7 @@ $effect(() => {
 <meta property="og:description" content="App del tiempo que combina previsión meteorológica y recomendación de complementos según la temperatura, lluvia y viento." />
 <meta property="og:url" content="https://outfitsky.netlify.app" />
 <meta property="og:image" content="https://outfitsky.netlify.app/outfitsky_og_1200x630.jpg" />
-<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="OutfitSky" />
