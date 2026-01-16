@@ -106,13 +106,14 @@ $effect(() => {
 <title>OutfitSky · La app del tiempo que te viste</title>
 <meta name="description" content="OutfitSky recomienda complementos y accesorios según el tiempo actual en tu ciudad. Consulta el pronóstico y consigue el kit perfecto para cada día." />
 <meta name="author" content="Rubén Terré">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="OutfitSky · La app del tiempo que te viste" />
 <meta property="og:description" content="App del tiempo que combina previsión meteorológica y recomendación de complementos según la temperatura, lluvia y viento." />
 <meta property="og:url" content="https://outfitsky.netlify.app" />
-<meta property="og:image" content="https://outfitsky.netlify.app/outfitsky_og_1200x630.png" />
-<meta property="og:image:type" content="image/png" />
+<meta property="og:image" content="https://outfitsky.netlify.app/outfitsky_og_1200x630.jpg" />
+<meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="OutfitSky" />
@@ -121,7 +122,7 @@ $effect(() => {
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="OutfitSky · La app del tiempo que te viste" />
 <meta name="twitter:description" content="Consulta el tiempo y recibe recomendaciones de complementos perfectos para cada día." />
-<meta name="twitter:image" content="https://outfitsky.netlify.app/outfitsky_og_1200x630.png" />
+<meta name="twitter:image" content="https://outfitsky.netlify.app/outfitsky_og_1200x630.jpg" />
 </svelte:head>
 
 {#if showInstallBanner}

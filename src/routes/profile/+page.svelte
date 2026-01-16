@@ -23,7 +23,7 @@
     <div class="about__icon">
           <img
       class="about__app-logo"
-      src="/assets/outfitSky_logo.svg"
+      src="/assets/outfitsky_logo.webp"
       alt="Logo de OutfitSky"
     />
     </div>
@@ -151,22 +151,13 @@
   .about__icon{
       width: 100px;
   height: 100px;
-  border-radius: 25%; /* O 50% para círculos */
-  overflow: hidden; /* Importante para contener los efectos */
-  position: relative;
-  /* Fondo degradado para simular refracción */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-  /* Efecto principal de vidrio */
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Para Safari */
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   }
 
   .about__app-logo {
-  width: 70%;
+  width: 90%;
   object-fit: contain;
   filter: brightness(1.2);
   }
@@ -184,7 +175,7 @@
     font-size: 18px;
     font-weight: 600;
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   .about__version {
