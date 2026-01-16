@@ -1,52 +1,45 @@
 <script>
   import Footer from "$lib/components/Footer.svelte";
   import products from "$lib/data/accesories.json";
+  import locations from "$lib/data/locations.json";
 
   const API_KEY = import.meta.env.VITE_META_API_KEY;
-
-  import locations from "$lib/data/locations.json";
 
   const cities = locations;
 
   let selectedCity = $state(cities[0]);
   let weatherToday = $state(null);
-  let recommended = $state([]);
   let loading = $state(false);
   let errorMsg = $state("");
-  // Seleccionar género y filtrar productos por género
-  let selectedGender = "";
+  let selectedGender = $state(""); // ojo: úsalo como rune también
 
-  // cuando cambie selectedCity, cargamos tiempo + outfit
- $effect(async () => {
-  if (!selectedCity) return;
+  // 👉 derivado: se recalcula cuando cambie weatherToday o selectedGender
+  let recommended = $derived(
+    getRecommendedProducts(weatherToday, selectedGender)
+  );
 
-  loading = true;
-  errorMsg = "";
-  weatherToday = null;
-  recommended = [];
+  $effect(async () => {
+    if (!selectedCity) return;
 
-  const data = await obtenerDatos(selectedCity.lat, selectedCity.lon);
-  if (!data) {
-    errorMsg = "Erro ao obter os datos do tempo.";
+    loading = true;
+    errorMsg = "";
+    weatherToday = null;
+
+    const data = await obtenerDatos(selectedCity.lat, selectedCity.lon);
+    if (!data) {
+      errorMsg = "Erro ao obter os datos do tempo.";
+      loading = false;
+      return;
+    }
+
+    weatherToday = {
+      temperature: data.main?.temp ?? 0,
+      precipitation: data.rain?.["1h"] ?? data.rain?.["3h"] ?? 0,
+      windSpeed: data.wind?.speed ?? 0,
+    };
+
     loading = false;
-    return;
-  }
-
-  weatherToday = {
-    temperature: data.main?.temp ?? 0,
-    precipitation: data.rain?.["1h"] ?? data.rain?.["3h"] ?? 0,
-    windSpeed: data.wind?.speed ?? 0
-  };
-
-
-  recommended = getRecommendedProducts(weatherToday);
-  loading = false;
-});
-
-$effect(() => {
-  if (!weatherToday) return;
-  recommended = getRecommendedProducts(weatherToday);
-});
+  });
 
   async function obtenerDatos(lat, lon) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=gl`;
@@ -69,7 +62,7 @@ $effect(() => {
     if (city) selectedCity = city;
   }
 
-  function getRecommendedProducts(weather) {
+  function getRecommendedProducts(weather, selectedGender) {
     if (!weather) return [];
 
     const { temperature, precipitation, windSpeed } = weather;
@@ -89,36 +82,34 @@ $effect(() => {
       );
     }
 
-    // 🔹 Filtro por xénero
-/*     if (selectedGender) {
+    // 👉 Aquí decides la lógica de género
+    if (selectedGender) {
       result = result.filter(
         (p) => p.genero === selectedGender || p.genero === "unisex"
       );
-    } */
-
-        if (selectedGender) {
-      result = result.filter(
-        (p) => p.genero === selectedGender
-      );
     }
 
-    const priorityTypes = [
-      "abrigo",
-      "pantalón",
-      "calzado",
-      "camiseta",
-      "accesorio",
-    ];
+    const typePriority = {
+      abrigo: 1,
+      chaqueta: 2,
+      accesorio_lluvia: 3,
+      calzado: 4,
+      camiseta: 5,
+      accesorio_frio: 6, // alta prioridad
+      bufanda: 7,
+      gorro: 20, // baja prioridad
+      gorra: 21,
+      accesorio_varios: 30,
+    };
 
     result.sort((a, b) => {
-      const aIndex = priorityTypes.indexOf(a.tipo);
-      const bIndex = priorityTypes.indexOf(b.tipo);
-      return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+      const aP = typePriority[a.tipo] ?? 999;
+      const bP = typePriority[b.tipo] ?? 999;
+      return aP - bP;
     });
 
-    return result.slice(0, 6);
+    return result.slice(0, 20);
   }
-
 </script>
 
 <section class="shop">
@@ -185,40 +176,40 @@ $effect(() => {
       {:else if !weatherToday || recommended.length === 0}
         <p>No hay sugerencias disponibles con el catálogo actual.</p>
       {:else}
-      <div class="shop__cards">
-        {#each recommended as product}
-          <div class="shop__card shop__card--hero">
-            <div class="shop__img-product">
-              <img
-                class="shop__img"
-                src={product.imagen}
-                alt={product.nombre}
-              />
-            </div>
-            <div class="shop__details">
-              <div class="shop__header">
-                <h3 class="shop__h3">{product.nombre}</h3>
-                <p class="shop__brand">{product.marca}</p>
+        <div class="shop__cards">
+          {#each recommended as product}
+            <div class="shop__card shop__card--hero">
+              <div class="shop__img-product">
+                <img
+                  class="shop__img"
+                  src={product.imagen}
+                  alt={product.nombre}
+                />
               </div>
-              <div class="shop__footer">
-                <div class="shop__price">
-                  <p class="shop__title">Precio apróx.</p>
-                  <h4 class="shop__h4">{product.precio_aproximado}€</h4>
+              <div class="shop__details">
+                <div class="shop__header">
+                  <h3 class="shop__h3">{product.nombre}</h3>
+                  <p class="shop__brand">{product.marca}</p>
                 </div>
-                <div class="shop__button-buy">
-                  <a href={product.url_externa} class="shop__a--buy">
-                    <img
-                      src="/assets/cart_icon.svg"
-                      alt="Icono de comprar"
-                      class="shop__icon-buy"
-                    />
-                    <p class="shop__buy-text">COMPRAR</p>
-                  </a>
+                <div class="shop__footer">
+                  <div class="shop__price">
+                    <p class="shop__title">Precio apróx.</p>
+                    <h4 class="shop__h4">{product.precio_aproximado}€</h4>
+                  </div>
+                  <div class="shop__button-buy">
+                    <a href={product.url_externa} class="shop__a--buy">
+                      <img
+                        src="/assets/cart_icon.svg"
+                        alt="Icono de comprar"
+                        class="shop__icon-buy"
+                      />
+                      <p class="shop__buy-text">COMPRAR</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        {/each}
+          {/each}
         </div>
       {/if}
     </div>
@@ -231,8 +222,8 @@ $effect(() => {
   .shop {
     width: 100vw;
     padding: 3rem 2rem;
-          max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   /*
@@ -441,8 +432,8 @@ $effect(() => {
     font-weight: 600;
   }
 
-  @media (min-width: 800px){
-    .shop__card{
+  @media (min-width: 800px) {
+    .shop__card {
       width: 365px;
     }
   }
