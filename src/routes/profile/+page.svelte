@@ -127,6 +127,7 @@
       </p>
     </div>
   </section>
+  <p class="about__made">Feito con agarimo e <a class="about__a" href="https://svelte.dev">Svelte</a> en Santiago de Compostela e podes ver máis sobre este proxecto no seguinte repositorio de GitHub: <a class="about__a" href="https://github.com/rubenterre/outfitsky-app">Repositorio de OutfitSky</a></p>
 </div>
 
 <Footer />
@@ -136,7 +137,7 @@
     background-color: var(--color-tertiary);
     min-height: 100%;
     width: 100vw;
-    padding: 2rem;
+    padding: 2rem 2rem 0px 2rem;
   }
 
   /* cabecera / logo app */
@@ -299,4 +300,11 @@
     text-align: left;
     padding-top: 20px;
   }
+  
+  .about__made{
+    font-size: .8rem;
+    margin-top: 2rem;
+  }
+
+
 </style>
